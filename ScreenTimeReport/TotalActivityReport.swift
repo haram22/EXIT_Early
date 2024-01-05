@@ -101,7 +101,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                             content.body = "[이 메세지가 보이시나요?] 지금 보는 것까지만 보고 미리 약속했던 '\(actionItem)' 을 해보는건 어떨까요?"
                             content.summaryArgumentCount = 60
                             content.sound = .default
-                            print("💪🏻🚨💻 : \(actionItem)")
+                            print("💪🏻💻 : \(actionItem)")
                             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
                             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                             
