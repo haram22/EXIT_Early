@@ -56,3 +56,49 @@ func EjectionPostRequest() {
     }
     task.resume()
 }
+
+func getBannerActionData() -> String{
+    var finalActionContent: String = ""
+    if let url = URL(string: "\(urlLink)actionItem/expose/\(userId)") {
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("🚨 Error: \(error.localizedDescription)")
+                return
+            }
+            // JSON data를 가져온다. optional 풀어줘야 함
+            if let JSONdata = data {
+                let dataString = String(data: JSONdata, encoding: .utf8) //얘도 확인을 위한 코드임
+            
+                // JSONDecoder 사용하기
+                let decoder = JSONDecoder() // initialize
+                do {
+                    let decodeData = try decoder.decode(BannerData.self, from: JSONdata)
+                    
+                    finalActionContent = decodeData.data.content
+                    print("ram : \(decodeData)")
+                    print("content = \(decodeData.data.content)")
+                } catch {
+                    print("🚨 JSON decoding error: \(error)")
+                }
+            }
+            print("---------> \(finalActionContent)")
+        }
+        task.resume()
+    }
+    return finalActionContent
+}
+
+struct BannerData: Codable {
+    let message: String
+    let comment: String
+    let data: BannerItem
+    let successful: Bool
+}
+
+struct BannerItem: Codable {
+    let id: Int
+    let category: String
+    let content: String
+    let exposureCount: Int
+}

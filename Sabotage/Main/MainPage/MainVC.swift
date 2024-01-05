@@ -323,7 +323,8 @@ class MainVC: UIViewController, LimitItemDelegate{
         toggleUI()
         toggleConstraintUI()
         piechartUI()
-        
+        // MARK: - getBannerActionData
+//        getBannerActionData()
         // MARK: - getActionData
         getActionData()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: .addNotification, object: nil)
