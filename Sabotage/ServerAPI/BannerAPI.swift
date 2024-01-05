@@ -6,8 +6,11 @@
 //
 
 import Foundation
+var finalActionContent: String = ""
 
 func EjectionPostRequest() {
+//    let test = getBannerActionData()
+    print("ttttttttt = \(getBannerActionData())")
     // 서버 링크가 유요한지 확인
     guard let url = URL(string: "\(urlLink)ejection/\(userId)") else {
         print("🚨 Invalid URL")
@@ -56,9 +59,44 @@ func EjectionPostRequest() {
     }
     task.resume()
 }
+struct BannerData: Codable {
+    var data: BannerContent
+}
+
+struct BannerContent: Codable {
+    var content: String
+    // 추가적으로 필요한 필드가 있으면 여기에 선언합니다.
+}
+
+// 함수 수정
+//func getBannerActionData(completion: @escaping (String) -> Void) {
+//    if let url = URL(string: "\(urlLink)actionItem/expose/\(userId)") {
+//        let session = URLSession(configuration: .default)
+//        let task = session.dataTask(with: url) { data, response, error in
+//            if let error = error {
+//                print("🚨 Error: \(error.localizedDescription)")
+//                return
+//            }
+//            if let JSONdata = data {
+//                let decoder = JSONDecoder()
+//                do {
+//                    let decodeData = try decoder.decode(BannerData.self, from: JSONdata)
+//                    print("ram : \(decodeData)")
+//                    print("content = \(decodeData.data.content)")
+//                    DispatchQueue.main.async {
+//                        completion(decodeData.data.content) // 비동기 작업의 결과를 반환합니다.
+//                    }
+//                } catch {
+//                    print("🚨 JSON decoding error: \(error)")
+//                }
+//            }
+//        }
+//        task.resume()
+//    }
+//}
 
 func getBannerActionData() -> String{
-    var finalActionContent: String = ""
+//    var finalActionContent: String = ""
     if let url = URL(string: "\(urlLink)actionItem/expose/\(userId)") {
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, response, error in
@@ -88,17 +126,48 @@ func getBannerActionData() -> String{
     }
     return finalActionContent
 }
+//func getBannerActionData(completion: @escaping (String) -> Void) {
+//    if let url = URL(string: "\(urlLink)actionItem/expose/\(userId)") {
+//        let session = URLSession(configuration: .default)
+//        let task = session.dataTask(with: url) { data, response, error in
+//            if let error = error {
+//                print("🚨 Error: \(error.localizedDescription)")
+//                completion("") // 오류 시 빈 문자열 반환
+//                return
+//            }
+//
+//            if let JSONdata = data {
+//                let decoder = JSONDecoder()
+//                do {
+//                    let decodeData = try decoder.decode(BannerData.self, from: JSONdata)
+//                    let content = decodeData.data.content
+//                    print("content = \(content)")
+//                    completion(content) // 성공 시 content 반환
+//                } catch {
+//                    print("🚨 JSON decoding error: \(error)")
+//                    completion("") // 디코딩 오류 시 빈 문자열 반환
+//                }
+//            } else {
+//                completion("") // 데이터 없음 시 빈 문자열 반환
+//            }
+//        }
+//        task.resume()
+//    } else {
+//        completion("") // 유효하지 않은 URL 시 빈 문자열 반환
+//    }
+//}
 
-struct BannerData: Codable {
-    let message: String
-    let comment: String
-    let data: BannerItem
-    let successful: Bool
-}
-
-struct BannerItem: Codable {
-    let id: Int
-    let category: String
-    let content: String
-    let exposureCount: Int
-}
+//
+//struct BannerData: Codable {
+//    let message: String
+//    let comment: String
+//    let data: BannerItem
+//    let successful: Bool
+//}
+//
+//struct BannerItem: Codable {
+//    let id: Int
+//    let category: String
+//    let content: String
+//    let exposureCount: Int
+//}

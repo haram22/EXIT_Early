@@ -40,8 +40,6 @@ class PieChart: UIViewController {
 //        chartView.centerTitle.UICol = .red // 텍스트 색상 변경
 //        chartView.centerTitleFont = UIFont.boldSystemFont(ofSize: 18) // 폰트 변경
 
-
-        
         self.view.addSubview(chartView)
     }
     

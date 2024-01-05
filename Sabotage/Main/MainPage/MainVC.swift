@@ -12,6 +12,7 @@ protocol LimitItemDelegate: AnyObject {
 }
 
 class MainVC: UIViewController, LimitItemDelegate{
+    
     //    var actionss: ActionTop?
     var segmentedControl = UISegmentedControl()
     
@@ -45,6 +46,7 @@ class MainVC: UIViewController, LimitItemDelegate{
     let leftButton = UIButton(type: .system)
     let rightButton = UIButton(type: .system)
     
+    
     func toggleUI() {
         
         actionTogglebuttonTapped.contentMode = .scaleAspectFit
@@ -74,6 +76,7 @@ class MainVC: UIViewController, LimitItemDelegate{
     }
     
     func toggleConstraintUI() {
+        
         NSLayoutConstraint.activate([ // 이거 위치 옮길 때 아래 버튼 위치도 같이 옮기기
             actionTogglebuttonTapped.topAnchor.constraint(equalTo: pieChartBG.bottomAnchor, constant: -10),
             actionTogglebuttonTapped.centerXAnchor.constraint(equalTo: view.centerXAnchor), // Center horizontally
@@ -179,6 +182,7 @@ class MainVC: UIViewController, LimitItemDelegate{
     
     
     func pieChartViewUI() {
+        let scheduleVM = ScheduleVM()
         logoImageView.contentMode = .scaleAspectFit // 로고 이미지의 크기를 유지하면서 비율을 맞춤
         view.addSubview(logoImageView)
         

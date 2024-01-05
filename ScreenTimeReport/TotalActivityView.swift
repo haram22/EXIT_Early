@@ -13,15 +13,19 @@ import UserNotifications
 struct TotalActivityView: View {
     var activityReport: ActivityReport
     var body: some View {
-        VStack(spacing: 0) {
-            Section {
-                // 앱을 'duration'에 따라 내림차순으로 정렬하고 상위 3개 선택
-                ForEach(activityReport.apps.sorted { $0.duration > $1.duration }.prefix(3).indices, id: \.self) { index in
-                    let eachApp = activityReport.apps.sorted { $0.duration > $1.duration }[index]
-                    ListRow(eachApp: eachApp, index: index + 1)
-                }
+        ZStack {
+            Rectangle().frame(width: 150, height: 200).background(Color.blue)
+            VStack(spacing: 0) {
+                
+                Section {
+                    // 앱을 'duration'에 따라 내림차순으로 정렬하고 상위 3개 선택
+                    ForEach(activityReport.apps.sorted { $0.duration > $1.duration }.prefix(3).indices, id: \.self) { index in
+                        let eachApp = activityReport.apps.sorted { $0.duration > $1.duration }[index]
+                        ListRow(eachApp: eachApp, index: index + 1)
+                    }
+                }.background(Color.blue)
             }
-        }
+        }.background(Color.blue)
     }
 }
 

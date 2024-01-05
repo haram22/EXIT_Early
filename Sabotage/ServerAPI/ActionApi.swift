@@ -140,41 +140,41 @@ func deleteRequest(id: Int) {
 
 
 // MARK: - 아직 구현 중
-func showActionPatchRequest(with category: String, content: String) {
-    guard let url = URL(string: "\(urlLink)actionItem/expose/\(userId)") else {
-        print("🚨 Invalid URL")
-        return
-    }
-    
-    var request = URLRequest(url: url)
-    request.httpMethod = "PATCH"
-    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-    
-    let body: [String: Any] = [
-        "category": category,
-        "content": content
-    ]
-    
-    request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
-    
-    let task = URLSession.shared.dataTask(with: request) { data, _, error in
-        guard let data = data, error == nil else {
-            print("🚨 \(error?.localizedDescription ?? "Unknown error")")
-            return
-        }
-        do {
-            let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-            print("✅ success: \(response)")
-            DispatchQueue.main.async {
-                DispatchQueue.main.async {
-                    //                    NotificationCenter.default.post(name: .addNotification, object: nil)
-                }
-            }
-        } catch {
-            print("🚨 ", error)
-        }
-    }
-    task.resume()
-}
+//func showActionPatchRequest(with category: String, content: String) {
+//    guard let url = URL(string: "\(urlLink)actionItem/expose/\(userId)") else {
+//        print("🚨 Invalid URL")
+//        return
+//    }
+//    
+//    var request = URLRequest(url: url)
+//    request.httpMethod = "PATCH"
+//    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//    
+//    let body: [String: Any] = [
+//        "category": category,
+//        "content": content
+//    ]
+//    
+//    request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+//    
+//    let task = URLSession.shared.dataTask(with: request) { data, _, error in
+//        guard let data = data, error == nil else {
+//            print("🚨 \(error?.localizedDescription ?? "Unknown error")")
+//            return
+//        }
+//        do {
+//            let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+//            print("✅ success: \(response)")
+//            DispatchQueue.main.async {
+//                DispatchQueue.main.async {
+//                    //                    NotificationCenter.default.post(name: .addNotification, object: nil)
+//                }
+//            }
+//        } catch {
+//            print("🚨 ", error)
+//        }
+//    }
+//    task.resume()
+//}
 
 

@@ -19,6 +19,12 @@
 		210B7B422B400E4000D4105D /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B412B400E4000D4105D /* MainTableView.swift */; };
 		210B7B452B40176900D4105D /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B442B40176900D4105D /* APICaller.swift */; };
 		210B7B472B4018CF00D4105D /* ActionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B462B4018CF00D4105D /* ActionApi.swift */; };
+		212FB03A2B487A05001611A8 /* BannerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2184A6F42B46832600008073 /* BannerAPI.swift */; };
+		212FB03B2B487A22001611A8 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B442B40176900D4105D /* APICaller.swift */; };
+		212FB03C2B487A2D001611A8 /* LimitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B3F2B400DD600D4105D /* LimitModel.swift */; };
+		212FB03D2B487A3E001611A8 /* ActionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B462B4018CF00D4105D /* ActionApi.swift */; };
+		212FB0402B489041001611A8 /* ScreenTimeReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8112B3D75C400A8DC07 /* ScreenTimeReport.swift */; };
+		212FB0422B4890C1001611A8 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8132B3D75C400A8DC07 /* TotalActivityReport.swift */; };
 		214CC4812B3C4782003B74EB /* SabotageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214CC4802B3C4782003B74EB /* SabotageApp.swift */; };
 		214CC4832B3C4782003B74EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214CC4822B3C4782003B74EB /* ContentView.swift */; };
 		214CC4852B3C4784003B74EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214CC4842B3C4784003B74EB /* Assets.xcassets */; };
@@ -34,8 +40,6 @@
 		2169E7FF2B3D754400A8DC07 /* ManagedSettingsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2169E7FE2B3D754400A8DC07 /* ManagedSettingsUI.framework */; };
 		2169E8022B3D754400A8DC07 /* ShieldConfigurationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8012B3D754400A8DC07 /* ShieldConfigurationExtension.swift */; };
 		2169E8072B3D754400A8DC07 /* ShieldConfiguration.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2169E7FC2B3D754400A8DC07 /* ShieldConfiguration.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2169E8122B3D75C400A8DC07 /* ScreenTimeReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8112B3D75C400A8DC07 /* ScreenTimeReport.swift */; };
-		2169E8142B3D75C400A8DC07 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8132B3D75C400A8DC07 /* TotalActivityReport.swift */; };
 		2169E8162B3D75C400A8DC07 /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8152B3D75C400A8DC07 /* TotalActivityView.swift */; };
 		2169E81B2B3D75C400A8DC07 /* ScreenTimeReport.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 2169E80F2B3D75C400A8DC07 /* ScreenTimeReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2169E8222B3D778600A8DC07 /* FamilyControlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8212B3D778600A8DC07 /* FamilyControlManager.swift */; };
@@ -1002,12 +1006,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				212FB03D2B487A3E001611A8 /* ActionApi.swift in Sources */,
 				885E033F2B484F15004DB806 /* FontSystemUikit.swift in Sources */,
+				212FB03C2B487A2D001611A8 /* LimitModel.swift in Sources */,
 				2169E8162B3D75C400A8DC07 /* TotalActivityView.swift in Sources */,
+				212FB03A2B487A05001611A8 /* BannerAPI.swift in Sources */,
 				21741A162B4170020062B0D7 /* Bundle_Extension.swift in Sources */,
+				212FB0402B489041001611A8 /* ScreenTimeReport.swift in Sources */,
+				212FB03B2B487A22001611A8 /* APICaller.swift in Sources */,
+				212FB0422B4890C1001611A8 /* TotalActivityReport.swift in Sources */,
 				2169E8322B3D7A6900A8DC07 /* ScreenTimeActivityReport.swift in Sources */,
-				2169E8122B3D75C400A8DC07 /* ScreenTimeReport.swift in Sources */,
-				2169E8142B3D75C400A8DC07 /* TotalActivityReport.swift in Sources */,
 				885E033E2B484F10004DB806 /* FontSystem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

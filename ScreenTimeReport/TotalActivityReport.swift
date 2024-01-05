@@ -35,7 +35,8 @@ struct TotalActivityReport: DeviceActivityReportScene {
     let content: (ActivityReport) -> TotalActivityView
     var activityStartTime: Date?
     /// DeviceActivityResults 데이터를 받아서 필터링
-    let finalActionData = getBannerActionData()
+//    let finalActionData = getBannerActionData()
+    let finalActionData = ""
     func makeConfiguration(
         representing data: DeviceActivityResults<DeviceActivityData>) async -> ActivityReport {
             // Reformat the data into a configuration that can be used to create
@@ -43,7 +44,8 @@ struct TotalActivityReport: DeviceActivityReportScene {
             var totalActivityDuration: Double = 0 /// 총 스크린 타임 시간
             var list: [AppDeviceActivity] = [] /// 사용 앱 리스트
             let limitTime: Double = 6
-            let specificLimitTime: Double = 360
+//            getLimitData()
+            let specificLimitTime: Double = 420
             
             /// DeviceActivityResults 데이터에서 화면에 보여주기 위해 필요한 내용을 추출해줍니다.
             for await eachData in data {
@@ -98,7 +100,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                             let content = UNMutableNotificationContent()
                             content.title = "탈출 1분 전!"
                             //                        content.body = "You have used \(appName) for 10 minutes."
-                            content.body = "지금 보는 것까지만 보고 미리 약속했던 '\(finalActionData)' 을 해보는건 어떨까요?"
+                            content.body = "지금 보는 것까지만 보고 미리 약속했던 '영어 단어 5개 암기', 해보는건 어떨까요?"
                             content.summaryArgumentCount = 60
                             content.sound = .default
                             print("💪🏻💻 : \(finalActionData)")
@@ -113,7 +115,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                         if notificationSentForApps["\(appName)2"] != true {
                             let content = UNMutableNotificationContent()
                             content.title = "Time Over !!!"
-                            content.body = "지금 보는 것까지만 보고 미리\n약속했던 '\(finalActionData)'을 해보는건 어떨까요?"
+                            content.body = "지금 보는 것까지만 보고 미리\n약속했던 '스쿼트 10회', 해보는건 어떨까요?"
                             
                             content.summaryArgumentCount = 60
                             content.sound = .default
@@ -129,7 +131,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                         if notificationSentForApps["\(appName)3"] != true {
                             let content = UNMutableNotificationContent()
                             content.title = "이미 1분이 지났네요.."
-                            content.body = "비록 약속을 지키지 못했지만, 아직 늦지 않았어요. 지금 바로 ‘\(finalActionData)'를 시작하면 어떨까요?"
+                            content.body = "비록 약속을 지키지 못했지만, 아직 늦지 않았어요. 지금 바로 ‘1시 전에 취침', 시작하면 어떨까요?"
                             content.summaryArgumentCount = 60
                             content.sound = .default
                             
