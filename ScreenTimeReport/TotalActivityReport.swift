@@ -50,7 +50,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
             var list: [AppDeviceActivity] = [] /// 사용 앱 리스트
             let limitTime: Double = 6
 //            getLimitData()
-            let specificLimitTime: Double = 180
+            let specificLimitTime: Double = 240
             
             /// DeviceActivityResults 데이터에서 화면에 보여주기 위해 필요한 내용을 추출해줍니다.
             for await eachData in data {
@@ -72,13 +72,17 @@ struct TotalActivityReport: DeviceActivityReportScene {
                             if duration >= specificLimitTime && duration <= specificLimitTime + 60  { // 10 minutes
                                 
                                 bannetText = 2
-                                scheduleNotification_each1(appName: applicationActivity.application.localizedDisplayName!)
                                 let alert = await UIAlertController(title: "알림", message: "시간이 거의 다 되었습니다!", preferredStyle: .alert)
 
                                     // 경고에 추가할 버튼(액션) 설정
                                 await alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+                                scheduleNotification_each1(appName: applicationActivity.application.localizedDisplayName!)
+                                
                                     
                             }
+//                            if duration >= specificLimitTime {
+//                                showAlert(title: "경고", message: "제한 시간을 초과했습니다!")
+//                            }
                             if duration >= specificLimitTime + 60 && duration <= specificLimitTime + 120  { // 10 minutes
                                 bannetText = 3
                                 
@@ -190,3 +194,24 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 class NavigationManager: ObservableObject {
     @Published var showBeforeAnalysisVC: Bool = false
 }
+
+//func showAlert(title: String, message: String) {
+//    if let topViewController = getTopViewController() {
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+//        DispatchQueue.main.async {
+//            topViewController.present(alert, animated: true, completion: nil)
+//        }
+//    }
+//}
+
+//func getTopViewController(_ base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+//    if let nav = base as? UINavigationController {
+//        return getTopViewController(nav.visibleViewController)
+//    } else if let tab = base as? UITabBarController, let selected = tab.selectedViewController {
+//        return getTopViewController(selected)
+//    } else if let presented = base?.presentedViewController {
+//        return getTopViewController(presented)
+//    }
+//    return base
+//}

@@ -18,7 +18,6 @@ struct ScreenTime_SabotageApp: App {
         handleRequestAuthorization()
         requestNotificationPermission()
         initUUID()
-        
     }
     var body: some Scene {
         WindowGroup {
@@ -26,9 +25,9 @@ struct ScreenTime_SabotageApp: App {
                 // MARK: - ram 권한에 대한 조건 설정
                 if !familyControlsManager.hasScreenTimePermission {
                     ContentView()
+                
                 } else {
-//                    NotiView()
-                    ContentView()
+                  ContentView()
                 }
             }
             .onReceive(familyControlsManager.authorizationCenter.$authorizationStatus) { newValue in
@@ -83,6 +82,7 @@ struct LimitDataList : Codable {
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        print("🎡 \(bannetText)")
         // 알림 델리게이트 설정
         UNUserNotificationCenter.current().delegate = self
         return true
@@ -113,5 +113,17 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
 //        if application.applicationState == .inactive {
 //            print("푸쉬알림 탭(앱 꺼져있음)")
 //        }
+//    }
+//}
+//struct BeforeAnalysisVCWrapper: UIViewControllerRepresentable {
+//    typealias UIViewControllerType = BeforeAnalysisVC
+//
+//    func makeUIViewController(context: Context) -> BeforeAnalysisVC {
+//        // 여기서 BeforeAnalysisVC 인스턴스를 생성
+//        return BeforeAnalysisVC()
+//    }
+//
+//    func updateUIViewController(_ uiViewController: BeforeAnalysisVC, context: Context) {
+//        // 필요한 경우 업데이트 로직을 여기에 구현
 //    }
 //}
