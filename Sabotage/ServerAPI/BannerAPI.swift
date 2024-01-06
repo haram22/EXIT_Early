@@ -9,8 +9,6 @@ import Foundation
 var finalActionContent: String = ""
 
 func EjectionPostRequest() {
-//    let test = getBannerActionData()
-    print("ttttttttt = \(getBannerActionData())")
     // 서버 링크가 유요한지 확인
     guard let url = URL(string: "\(urlLink)ejection/\(userId)") else {
         print("🚨 Invalid URL")

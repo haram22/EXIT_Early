@@ -70,6 +70,8 @@
 		21741A1B2B417CCB0062B0D7 /* DeviceActivityMonitor.appex in Resources */ = {isa = PBXBuildFile; fileRef = 2169E7D72B3D750C00A8DC07 /* DeviceActivityMonitor.appex */; };
 		21741A1E2B417D520062B0D7 /* MonitoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21741A1D2B417D520062B0D7 /* MonitoringView.swift */; };
 		21750E062B4159BA004E9A04 /* LimitViewSU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21750E052B4159BA004E9A04 /* LimitViewSU.swift */; };
+		2184A46F2B48B31200694F0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214CC4842B3C4784003B74EB /* Assets.xcassets */; };
+		2184A4712B48B74900694F0F /* bannerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2184A4702B48B74900694F0F /* bannerTest.swift */; };
 		2184A6EB2B4682C700008073 /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2184A6E22B4682C700008073 /* AppleSDGothicNeoEB.ttf */; };
 		2184A6EC2B4682C700008073 /* AppleSDGothicNeoL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2184A6E32B4682C700008073 /* AppleSDGothicNeoL.ttf */; };
 		2184A6ED2B4682C700008073 /* AppleSDGothicNeoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2184A6E42B4682C700008073 /* AppleSDGothicNeoM.ttf */; };
@@ -215,6 +217,7 @@
 		21741A092B41699E0062B0D7 /* shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = shared.xcconfig; sourceTree = "<group>"; };
 		21741A1D2B417D520062B0D7 /* MonitoringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringView.swift; sourceTree = "<group>"; };
 		21750E052B4159BA004E9A04 /* LimitViewSU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitViewSU.swift; sourceTree = "<group>"; };
+		2184A4702B48B74900694F0F /* bannerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerTest.swift; sourceTree = "<group>"; };
 		2184A6E22B4682C700008073 /* AppleSDGothicNeoEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoEB.ttf; path = "../../../../Apple 산돌고딕 Neo/AppleSDGothicNeoEB.ttf"; sourceTree = "<group>"; };
 		2184A6E32B4682C700008073 /* AppleSDGothicNeoL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoL.ttf; path = "../../../../Apple 산돌고딕 Neo/AppleSDGothicNeoL.ttf"; sourceTree = "<group>"; };
 		2184A6E42B4682C700008073 /* AppleSDGothicNeoM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoM.ttf; path = "../../../../Apple 산돌고딕 Neo/AppleSDGothicNeoM.ttf"; sourceTree = "<group>"; };
@@ -338,6 +341,7 @@
 		214CC4742B3C4782003B74EB = {
 			isa = PBXGroup;
 			children = (
+				214CC4842B3C4784003B74EB /* Assets.xcassets */,
 				214CC47F2B3C4782003B74EB /* Sabotage */,
 				2169E7DA2B3D750C00A8DC07 /* DeviceActivityMonitor */,
 				2169E7ED2B3D752A00A8DC07 /* ShieldAction */,
@@ -380,7 +384,6 @@
 				8852C05A2B3C484500219714 /* Profile */,
 				214CC4802B3C4782003B74EB /* SabotageApp.swift */,
 				214CC4822B3C4782003B74EB /* ContentView.swift */,
-				214CC4842B3C4784003B74EB /* Assets.xcassets */,
 				21E458772B41984300AFC7F4 /* Colors.xcassets */,
 				214CC4862B3C4784003B74EB /* Preview Content */,
 			);
@@ -399,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				2167F4CF2B44B7040025F842 /* notiTest.swift */,
+				2184A4702B48B74900694F0F /* bannerTest.swift */,
 			);
 			path = notificationTest;
 			sourceTree = "<group>";
@@ -866,6 +870,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21741A0F2B416A880062B0D7 /* shared.xcconfig in Resources */,
+				2184A46F2B48B31200694F0F /* Assets.xcassets in Resources */,
 				8898814F2B48499C003DD455 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -928,6 +933,7 @@
 				21741A0A2B41699E0062B0D7 /* shared.xcconfig in Sources */,
 				21741A1E2B417D520062B0D7 /* MonitoringView.swift in Sources */,
 				210B7B472B4018CF00D4105D /* ActionApi.swift in Sources */,
+				2184A4712B48B74900694F0F /* bannerTest.swift in Sources */,
 				8852C0692B3C4B1300219714 /* ActionItemController.swift in Sources */,
 				8800F0A72B421A25005CB6D2 /* FontSystem.swift in Sources */,
 				2169E8222B3D778600A8DC07 /* FamilyControlManager.swift in Sources */,

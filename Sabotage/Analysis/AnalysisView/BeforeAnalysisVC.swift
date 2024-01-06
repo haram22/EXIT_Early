@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class BeforeAnalysisVC: UIViewController {
     
@@ -21,7 +22,7 @@ class BeforeAnalysisVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(showPage(_:)), name: NSNotification.Name("하람테스트"), object: nil)
         // "X" 버튼 추가
         view.addSubview(backButton)
         NSLayoutConstraint.activate([
@@ -30,13 +31,6 @@ class BeforeAnalysisVC: UIViewController {
             backButton.widthAnchor.constraint(equalToConstant: 44),
             backButton.heightAnchor.constraint(equalToConstant: 44)
         ])
-        
-//        // 이미지 뷰 생성
-//        let imageView = UIImageView()
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.contentMode = .scaleAspectFit
-//        imageView.image = UIImage(named: "your_image_name") // 이미지 이름을 넣어주세요
-//        view.addSubview(imageView)
         
         // 타이틀 레이블 생성
         let icon = UILabel()
@@ -50,7 +44,7 @@ class BeforeAnalysisVC: UIViewController {
         // 타이틀 레이블 생성
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = "'자리에 앉기'를 시작해봐요"
+        titleLabel.text = "'스쿼트 10회'를 시작해봐요"
         titleLabel.textColor = .black
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
@@ -129,5 +123,22 @@ class BeforeAnalysisVC: UIViewController {
         navigationController?.pushViewController(analysisVC, animated: true)
     }
 
-    
+    @objc func showPage(_ notification: Notification) {
+        if let userInfo = notification.userInfo, let index = userInfo["index"] as? Int {
+            // 이곳에서 필요한 화면으로 이동하는 로직을 구현하세요.
+            // 예를 들어, UINavigationController에 래핑된 ViewController로 이동하려면:
+            let secondVC = BeforeAnalysisVC()
+            self.navigationController?.pushViewController(secondVC, animated: true)
+        }
+    }
+}
+
+struct BeforeAnalysisVCRepresentable: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> BeforeAnalysisVC {
+        return BeforeAnalysisVC()
+    }
+
+    func updateUIViewController(_ uiViewController: BeforeAnalysisVC, context: Context) {
+        // 필요한 경우 업데이트 로직
+    }
 }

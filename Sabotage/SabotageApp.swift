@@ -18,6 +18,7 @@ struct ScreenTime_SabotageApp: App {
         handleRequestAuthorization()
         requestNotificationPermission()
         initUUID()
+        
     }
     var body: some Scene {
         WindowGroup {
@@ -79,3 +80,38 @@ struct LimitDataList : Codable {
     let title: String
     let timeBudget: Int
 }
+
+class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        // 알림 델리게이트 설정
+        UNUserNotificationCenter.current().delegate = self
+        return true
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if response.notification.request.content.title == "탈출 1분 전!" {
+            NotificationCenter.default.post(name: Notification.Name("하람테스트"), object: nil, userInfo: ["index": 3])
+        }
+        completionHandler()
+    }
+}
+//
+//extension AppDelegate: UNUserNotificationCenterDelegate {
+//    
+//    func userNotificationCenter(_ center: UNUserNotificationCenter,
+//                                didReceive response: UNNotificationResponse,
+//                                withCompletionHandler completionHandler: @escaping () -> Void) {
+//        
+//        let application = UIApplication.shared
+//        
+//        //앱이 켜져있는 상태에서 푸쉬 알림을 눌렀을 때
+//        if application.applicationState == .active {
+//            print("푸쉬알림 탭(앱 켜져있음)")
+//        }
+//        
+//        //앱이 꺼져있는 상태에서 푸쉬 알림을 눌렀을 때
+//        if application.applicationState == .inactive {
+//            print("푸쉬알림 탭(앱 꺼져있음)")
+//        }
+//    }
+//}

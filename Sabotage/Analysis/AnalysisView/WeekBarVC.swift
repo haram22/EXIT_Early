@@ -13,7 +13,7 @@ class WeekBarVC: UIViewController {
     var barGraphView: BarChartView!
     var dataPoints: [String] = ["일","월","화","수","목","금","토"]
     var dataEntries : [BarChartDataEntry] = []
-    var dataArray:[Int] = [10,5,6,13,15,8,2]
+    var dataArray:[Int] = [10,5,6,13,15,7,2]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class WeekBarVC: UIViewController {
         
 
         // 데이터가 토요일에 해당하는 위치를 식별하여 해당 막대 그래프만 초록색으로 설정
-            dataArray[6] = 20 // '토' 요일에 해당하는 데이터를 20으로 변경
+            dataArray[6] = 9 // '토' 요일에 해당하는 데이터를 20으로 변경
         
         for i in 0..<dataPoints.count {
                 let dataEntry = BarChartDataEntry(x: Double(i), y: Double(dataArray[i]))

@@ -13,7 +13,7 @@ class ChangeBarVC: UIViewController {
     var barGraphView: BarChartView!
     var dataPoints: [String] = ["어제", "오늘"]
     var dataEntries : [BarChartDataEntry] = []
-    var dataArray:[Int] = [5,5]
+    var dataArray:[Int] = [5,1]
     
     override func viewDidLoad() {
         super.viewDidLoad()

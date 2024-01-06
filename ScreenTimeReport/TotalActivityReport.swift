@@ -9,6 +9,7 @@ import DeviceActivity
 import SwiftUI
 import UserNotifications
 
+
 //protocol DeviceActivityReportScene {
 //    // 프로토콜 정의
 //    // ...
@@ -23,7 +24,7 @@ extension DeviceActivityReport.Context {
 }
 // MARK: - ram : dictionary for triger check
 var notificationSentForApps: [String: Bool] = [:]
-
+let userNotificationCenter = UNUserNotificationCenter.current()
 // MARK: - Device Activity Report의 내용을 어떻게 구성할 지 설정
 struct TotalActivityReport: DeviceActivityReportScene {
     // Define which context your scene will represent.
@@ -37,6 +38,8 @@ struct TotalActivityReport: DeviceActivityReportScene {
     /// DeviceActivityResults 데이터를 받아서 필터링
 //    let finalActionData = getBannerActionData()
     let finalActionData = ""
+
+    
     func makeConfiguration(
         representing data: DeviceActivityResults<DeviceActivityData>) async -> ActivityReport {
             // Reformat the data into a configuration that can be used to create
@@ -45,7 +48,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
             var list: [AppDeviceActivity] = [] /// 사용 앱 리스트
             let limitTime: Double = 6
 //            getLimitData()
-            let specificLimitTime: Double = 420
+            let specificLimitTime: Double = 180
             
             /// DeviceActivityResults 데이터에서 화면에 보여주기 위해 필요한 내용을 추출해줍니다.
             for await eachData in data {
@@ -97,6 +100,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                     }
                     func scheduleNotification_each0(appName: String) {
                         if notificationSentForApps["\(appName)1"] != true {
+                            EjectionPostRequest()
                             let content = UNMutableNotificationContent()
                             content.title = "탈출 1분 전!"
                             //                        content.body = "You have used \(appName) for 10 minutes."
@@ -113,6 +117,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                     }
                     func scheduleNotification_each1(appName: String) {
                         if notificationSentForApps["\(appName)2"] != true {
+                            EjectionPostRequest()
                             let content = UNMutableNotificationContent()
                             content.title = "Time Over !!!"
                             content.body = "지금 보는 것까지만 보고 미리\n약속했던 '스쿼트 10회', 해보는건 어떨까요?"
@@ -129,6 +134,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                     }
                     func scheduleNotification_each2(appName: String) {
                         if notificationSentForApps["\(appName)3"] != true {
+                            EjectionPostRequest()
                             let content = UNMutableNotificationContent()
                             content.title = "이미 1분이 지났네요.."
                             content.body = "비록 약속을 지키지 못했지만, 아직 늦지 않았어요. 지금 바로 ‘1시 전에 취침', 시작하면 어떨까요?"
@@ -142,40 +148,6 @@ struct TotalActivityReport: DeviceActivityReportScene {
                             notificationSentForApps["\(appName)3"] = true
                         }
                     }
-                    // MARK: - ram : 전체 시간에 대한 처리
-//                    func scheduleNotification0() {
-//                        let content = UNMutableNotificationContent()
-//                        content.title = "⚠️ limit Time 10분 전임 "
-//                        content.body = "You have used the app for 10 minutes."
-//                        content.sound = .default
-//
-//                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-//                        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-//
-//                        UNUserNotificationCenter.current().add(request)
-//                    }
-//                    func scheduleNotification1() {
-//                        let content = UNMutableNotificationContent()
-//                        content.title = "🙌🏻 limit Time임 "
-//                        content.body = "You have used the app for 10 minutes."
-//                        content.sound = .default
-//
-//                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-//                        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-//
-//                        UNUserNotificationCenter.current().add(request)
-//                    }
-//                    func scheduleNotification2() {
-//                        let content = UNMutableNotificationContent()
-//                        content.title = "🚨 10분 지났음 이제 꺼"
-//                        content.body = "You have used the app for 10 minutes."
-//                        content.sound = .default
-//
-//                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-//                        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-//
-//                        UNUserNotificationCenter.current().add(request)
-//                    }
                 }
             }
             
@@ -184,3 +156,16 @@ struct TotalActivityReport: DeviceActivityReportScene {
         }
 }
 
+
+
+
+
+func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        // 해당 Notification의 content로 메시지 별 분기 가능
+        
+        if response.notification.request.content.title == "탈출 1분 전!" {
+        
+            NotificationCenter.default.post(name: Notification.Name("하람테스트"), object: nil, userInfo: ["index":3])
+        }
+}

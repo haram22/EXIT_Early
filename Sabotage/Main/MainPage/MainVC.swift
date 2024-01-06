@@ -12,7 +12,7 @@ protocol LimitItemDelegate: AnyObject {
 }
 
 class MainVC: UIViewController, LimitItemDelegate{
-    
+    //    var activityTimeReport: ActivityReport
     //    var actionss: ActionTop?
     var segmentedControl = UISegmentedControl()
     
@@ -175,7 +175,7 @@ class MainVC: UIViewController, LimitItemDelegate{
             hostingController.view.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 280),
             //            hostingController.view.widthAnchor.constraint(equalToConstant: 150),
             //            hostingController.view.heightAnchor.constraint(equalToConstant: 200),
-        ])  
+        ])
         hostingController.didMove(toParent: self)
     }
     
@@ -328,7 +328,7 @@ class MainVC: UIViewController, LimitItemDelegate{
         toggleConstraintUI()
         piechartUI()
         // MARK: - getBannerActionData
-//        getBannerActionData()
+        //        getBannerActionData()
         // MARK: - getActionData
         getActionData()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: .addNotification, object: nil)
@@ -411,7 +411,7 @@ class MainVC: UIViewController, LimitItemDelegate{
         //            actionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
         //            actionButton.widthAnchor.constraint(equalToConstant: 370), // 버튼의 너비 조정
         //            actionButton.heightAnchor.constraint(equalToConstant: 80) // 버튼의 높이 조정
-        //            
+        //
         //        ])
         
         let actiontotalTableViewHeight = actionTableView.contentSize.height + actionButton.bounds.height
@@ -581,25 +581,27 @@ class MainVC: UIViewController, LimitItemDelegate{
             
         }
     }
-        
-        
-        @objc func limitButtonTapped() {
-            // MARK: ram - test code
-            print("addButtonTapped")
-            let scheduleView = ScheduleView()
-            let hostingController = UIHostingController(rootView: scheduleView)
-            navigationController?.pushViewController(hostingController, animated: true)
-        }
-        @objc func reloadCollectionView() {
-            DispatchQueue.main.async {
-                self.getActionData()
-                self.getLimitData()
-                self.actionTableView.reloadData()
-                self.limitTableView.reloadData()
-            }
-        }
-        deinit {
-            NotificationCenter.default.removeObserver(self)
+    
+    
+    @objc func limitButtonTapped() {
+        // MARK: ram - test code
+        print("addButtonTapped")
+        let scheduleView = ScheduleView()
+        let hostingController = UIHostingController(rootView: scheduleView)
+        navigationController?.pushViewController(hostingController, animated: true)
+    }
+    @objc func reloadCollectionView() {
+        DispatchQueue.main.async {
+            self.getActionData()
+            self.getLimitData()
+            self.actionTableView.reloadData()
+            self.limitTableView.reloadData()
         }
     }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
+    
+}
+

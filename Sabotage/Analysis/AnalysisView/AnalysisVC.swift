@@ -114,15 +114,15 @@ override func viewDidLoad() {
         // Change Label을 contentView에 추가
         let changeLabel = UILabel()
         changeLabel.translatesAutoresizingMaskIntoConstraints = false
-        changeLabel.text = "어제보다\n40%\n감소했어요"
+        changeLabel.text = "어제보다\n84%\n감소했어요"
         changeLabel.font = UIFont.Headline()
         changeLabel.textColor = .base50
         changeLabel.numberOfLines = 3
         contentView.addSubview(changeLabel)
         
         // '40%' 텍스트의 색상을 변경하기 위한 NSAttributedString 설정
-        let attributedString = NSMutableAttributedString(string: "어제보다\n40%\n감소했어요")
-        let range = (changeLabel.text! as NSString).range(of: "40%")
+        let attributedString = NSMutableAttributedString(string: "어제보다\n84%\n감소했어요")
+        let range = (changeLabel.text! as NSString).range(of: "84%")
         attributedString.addAttribute(.foregroundColor, value: UIColor.green, range: range)
         changeLabel.attributedText = attributedString
         
