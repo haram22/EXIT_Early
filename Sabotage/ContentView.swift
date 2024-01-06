@@ -14,6 +14,7 @@ class MainViewModel: ObservableObject {
 }
 
 struct ContentView: View {
+    @StateObject var navigationManager = NavigationManager()
     @ObservedObject var viewModel = MainViewModel() // MainViewModel 인스턴스 생성
         @State private var shouldNavigate = false
 
@@ -26,11 +27,15 @@ struct ContentView: View {
                     if shouldNavigate {
                         NavigationLink("", destination: BeforeAnalysisVCWrapper(), isActive: $shouldNavigate)
                     }
+                    NavigationLink(destination: BeforeAnalysisVCWrapper(),
+                                                   isActive: $navigationManager.showBeforeAnalysisVC) {
+                                        EmptyView()
+                                    }
                 }
                 .onReceive(NotificationCenter.default.publisher(for: Notification.Name("하람테스트"))) { _ in
                     self.shouldNavigate = true
                 }
-            }
+            }.environmentObject(navigationManager)
         }
 }
 struct BeforeAnalysisVCWrapper: UIViewControllerRepresentable {

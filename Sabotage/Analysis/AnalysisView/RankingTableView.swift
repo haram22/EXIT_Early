@@ -179,7 +179,7 @@ class RankingTableView: UIView, UITableViewDataSource, UITableViewDelegate {
             rightText.textColor = .base300
         case 10:
             leftText.text = nickname
-            rightText.text = "몇회"
+            rightText.text = "13회"
             leftText.textColor = .base500
             rightText.textColor = .base500
             

@@ -26,9 +26,9 @@ class PieChart: UIViewController {
     // MARK: - 다른 부분을 탭하면 "총 사용 시간"으로 넘어가는 로직은 나중에 디자인 다 나와서 파이차트 백그라운드 이미지 받으면 (파이차트, 버튼 3개 제외) 그 이미지 클릭하면 넘어가게끔 나중에 구현.
     
     func totalTimeUI() {
-        let singleItem = RKPieChartItem(ratio: 50, color: UIColor.primary500, title: "")
+        let singleItem = RKPieChartItem(ratio: 23, color: UIColor.primary500, title: "")
         
-        chartView = RKPieChartView(items: [singleItem], centerTitle: "Title")
+        chartView = RKPieChartView(items: [singleItem], centerTitle: "23%")
         chartView.circleColor = .base400
         chartView.translatesAutoresizingMaskIntoConstraints = false
         chartView.arcWidth = 10

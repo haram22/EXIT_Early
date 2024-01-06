@@ -10,6 +10,8 @@ import SwiftUI
 import UserNotifications
 
 
+var bannetText: Int = 0
+
 //protocol DeviceActivityReportScene {
 //    // 프로토콜 정의
 //    // ...
@@ -64,12 +66,22 @@ struct TotalActivityReport: DeviceActivityReportScene {
                             let duration = applicationActivity.totalActivityDuration /// 앱의 total activity 기간
                             // MARK: - ram: 각 앱에 대한 시간처리 조건문
                             if duration >= specificLimitTime - 60 && duration <= specificLimitTime  { // 10 minutes
+                                bannetText = 1
                                 scheduleNotification_each0(appName: applicationActivity.application.localizedDisplayName!)
                             }
                             if duration >= specificLimitTime && duration <= specificLimitTime + 60  { // 10 minutes
+                                
+                                bannetText = 2
                                 scheduleNotification_each1(appName: applicationActivity.application.localizedDisplayName!)
+                                let alert = await UIAlertController(title: "알림", message: "시간이 거의 다 되었습니다!", preferredStyle: .alert)
+
+                                    // 경고에 추가할 버튼(액션) 설정
+                                await alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+                                    
                             }
                             if duration >= specificLimitTime + 60 && duration <= specificLimitTime + 120  { // 10 minutes
+                                bannetText = 3
+                                
                                 scheduleNotification_each2(appName: applicationActivity.application.localizedDisplayName!)
                             }
                             totalActivityDuration += duration
@@ -115,10 +127,15 @@ struct TotalActivityReport: DeviceActivityReportScene {
                             notificationSentForApps["\(appName)1"] = true
                         }
                     }
+                    
                     func scheduleNotification_each1(appName: String) {
                         if notificationSentForApps["\(appName)2"] != true {
                             EjectionPostRequest()
                             let content = UNMutableNotificationContent()
+                            DispatchQueue.main.async {
+                                        // Main thread에서 UI 업데이트
+//                                        navigationManager.showBeforeAnalysisVC = true
+                                    }
                             content.title = "Time Over !!!"
                             content.body = "지금 보는 것까지만 보고 미리\n약속했던 '스쿼트 10회', 해보는건 어떨까요?"
                             
@@ -168,4 +185,8 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
         
             NotificationCenter.default.post(name: Notification.Name("하람테스트"), object: nil, userInfo: ["index":3])
         }
+}
+
+class NavigationManager: ObservableObject {
+    @Published var showBeforeAnalysisVC: Bool = false
 }
