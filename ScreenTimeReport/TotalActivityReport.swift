@@ -50,8 +50,11 @@ struct TotalActivityReport: DeviceActivityReportScene {
             var list: [AppDeviceActivity] = [] /// 사용 앱 리스트
             let limitTime: Double = 6
 //            getLimitData()
-            let specificLimitTime: Double = 240
-            
+            let specificLimitTime: Double = 360
+            func showAlert(appName: String) {
+                // 알림 표시 로직
+                print("Alert: \(appName) has reached the time limit.")
+            }
             /// DeviceActivityResults 데이터에서 화면에 보여주기 위해 필요한 내용을 추출해줍니다.
             for await eachData in data {
                 /// 특정 시간 간격 동안 사용자의 활동
@@ -67,18 +70,14 @@ struct TotalActivityReport: DeviceActivityReportScene {
                             // MARK: - ram: 각 앱에 대한 시간처리 조건문
                             if duration >= specificLimitTime - 60 && duration <= specificLimitTime  { // 10 minutes
                                 bannetText = 1
+                                
                                 scheduleNotification_each0(appName: applicationActivity.application.localizedDisplayName!)
+                                
                             }
                             if duration >= specificLimitTime && duration <= specificLimitTime + 60  { // 10 minutes
                                 
-                                bannetText = 2
-                                let alert = await UIAlertController(title: "알림", message: "시간이 거의 다 되었습니다!", preferredStyle: .alert)
-
-                                    // 경고에 추가할 버튼(액션) 설정
-                                await alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
-                                scheduleNotification_each1(appName: applicationActivity.application.localizedDisplayName!)
-                                
-                                    
+                                scheduleNotification_each0(appName: applicationActivity.application.localizedDisplayName!)
+                                    showAlert(appName: applicationActivity.application.localizedDisplayName!)
                             }
 //                            if duration >= specificLimitTime {
 //                                showAlert(title: "경고", message: "제한 시간을 초과했습니다!")
@@ -87,6 +86,12 @@ struct TotalActivityReport: DeviceActivityReportScene {
                                 bannetText = 3
                                 
                                 scheduleNotification_each2(appName: applicationActivity.application.localizedDisplayName!)
+                            }
+                            if duration > specificLimitTime {
+                                let alert = await UIAlertController(title: "탈출에 성공한 걸 축하해요!", message: "작은 시도를 통해서 목표를 쉽게 시작하는 것이 습관을 개선하는 데 도움을 준대요", preferredStyle: .alert)
+
+                                    // 경고에 추가할 버튼(액션) 설정
+                                await alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
                             }
                             totalActivityDuration += duration
                             let numberOfPickups = applicationActivity.numberOfPickups /// 앱에 대해 직접적인 pickup 횟수

@@ -25,7 +25,6 @@ struct ScreenTime_SabotageApp: App {
                 // MARK: - ram 권한에 대한 조건 설정
                 if !familyControlsManager.hasScreenTimePermission {
                     ContentView()
-                
                 } else {
                   ContentView()
                 }

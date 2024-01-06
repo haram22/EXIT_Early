@@ -170,7 +170,7 @@ class MainVC: UIViewController, LimitItemDelegate{
         NSLayoutConstraint.activate([
             hostingController.view.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
             //            hostingController.view.leadingAnchor.constraint(equalTo: pieChartBG.centerXAnchor, constant: 10),
-            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 230),
+            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 220),
             hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             hostingController.view.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 280),
             //            hostingController.view.widthAnchor.constraint(equalToConstant: 150),
@@ -436,6 +436,7 @@ class MainVC: UIViewController, LimitItemDelegate{
             limitButton.widthAnchor.constraint(equalToConstant: 350), // Adjust the width and height based on your image size
             limitButton.heightAnchor.constraint(equalToConstant: 100) // Adjust the width and height based on your image size
             
+            
         ])
         
         limitTableView.tableFooterView = limitButton
@@ -443,7 +444,23 @@ class MainVC: UIViewController, LimitItemDelegate{
         let totalTableViewHeight = limitTableView.contentSize.height + limitButton.bounds.height
         limitTableView.contentInset = UIEdgeInsets(top: 00, left: 0, bottom: totalTableViewHeight, right: 0)
     }
-    
+    @objc func showPage(_ notification:Notification) {
+            if let userInfo = notification.userInfo {
+                if let index = userInfo["index"] as? Int {
+                
+                    // 네번째 탭의 VC는 NavigationBar를 가지고 있어서 UINavigationController로 다운 캐스팅을 해주기
+                    let navigationController = self.children[index] as? UINavigationController
+                    
+                    
+                    // navigationController에 연결되어 있는 secondVC를 push 형식으로 전환
+                    guard let secondVC = storyboard?.instantiateViewController(withIdentifier: "secondVC") as? BeforeAnalysisVC else { return }
+                    navigationController?.pushViewController(secondVC, animated: true)
+                    
+                    // Modal로 띄우고 싶으면 NavigationController를 연결하는 선행 과정 없이 present 메서드를 사용하면 됨.
+                }
+                
+            }
+        }
     
     private func configureTableView(_ tableView: UITableView, cellClass: UITableViewCell.Type, identifier: String) {
         view.addSubview(tableView)
