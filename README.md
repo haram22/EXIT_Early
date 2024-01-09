@@ -3,11 +3,13 @@
 
 <h1>$\huge{\sf{\color{#51FF00}EXIT를}}$ $\huge{\sf{\color{#51FF00}소개합니다!}}$</h1>
 
-$\normalsize{\sf{\color{#51FF00}EXIT는}}$
+$\normalsize{\sf{\color{#51FF00}EXIT는}}$ <br>
+
 **숏폼** 컨텐츠와 **무한 스크롤**으로 인한 무의미한 **도파민 중독**으로부터 벗어나,
 의미있는 습관 형성으로 이어질 수 있도록 하는 **스크린타임 생산성 서비스**입니다.
 
-$\normalsize{\sf{\color{#51FF00}EXIT의}}$ $\normalsize{\sf{\color{#51FF00}차별점은}}$
+$\normalsize{\sf{\color{#51FF00}EXIT의}}$ $\normalsize{\sf{\color{#51FF00}차별점은}}$  <br>
+
 기존 서비스들에 비하여 **강압적**으로 느끼게 되는 **단계를 완화**하는 동시에,
 **심리학적 근거**에 기반하여 실제적인 **행동 유도** 기능을 제공한다는 것입니다.
 
