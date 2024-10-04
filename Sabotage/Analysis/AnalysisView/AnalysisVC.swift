@@ -8,8 +8,8 @@ class AnalysisVC: UIViewController {
     let Change = UILabel()
     let ExitRank = UILabel()
     let updateTime = UILabel()
-    let weekBarVC = WeekBarVC()
-    let changeBarVC = ChangeBarVC()
+//    let weekBarVC = WeekBarVC()
+//    let changeBarVC = ChangeBarVC()
     let rankingTableView = RankingTableView()
     let rankingBG = UIButton(type: .custom)
 
@@ -22,8 +22,8 @@ override func viewDidLoad() {
     contentViewUI()
     
     titleUI()
-    addWeekBarView()
-    addChangeBarView()
+//    addWeekBarView()
+//    addChangeBarView()
     rankingUI()
 
     
@@ -165,43 +165,43 @@ override func viewDidLoad() {
     }
     
     // WeekBarVC의 뷰를 AnalysisVC에 추가하는 메서드
-    func addWeekBarView() {
-        // WeekBarVC의 뷰를 AnalysisVC의 contentView에 추가
-        weekBarVC.view.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(weekBarVC.view)
-            
-        // Autolayout constraints 설정
-        NSLayoutConstraint.activate([
-            weekBarVC.view.topAnchor.constraint(equalTo: ThisWeek.bottomAnchor, constant: -90),
-            weekBarVC.view.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            weekBarVC.view.widthAnchor.constraint(equalToConstant: 343),
-            weekBarVC.view.heightAnchor.constraint(equalToConstant: 320) // 적절한 크기로 조정
-        ])
-            
-        // 부모-자식 뷰컨트롤러 관계 설정
-        addChild(weekBarVC)
-        weekBarVC.didMove(toParent: self)
-    }
+//    func addWeekBarView() {
+//        // WeekBarVC의 뷰를 AnalysisVC의 contentView에 추가
+//        weekBarVC.view.translatesAutoresizingMaskIntoConstraints = false
+//        contentView.addSubview(weekBarVC.view)
+//            
+//        // Autolayout constraints 설정
+//        NSLayoutConstraint.activate([
+//            weekBarVC.view.topAnchor.constraint(equalTo: ThisWeek.bottomAnchor, constant: -90),
+//            weekBarVC.view.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+//            weekBarVC.view.widthAnchor.constraint(equalToConstant: 343),
+//            weekBarVC.view.heightAnchor.constraint(equalToConstant: 320) // 적절한 크기로 조정
+//        ])
+//            
+//        // 부모-자식 뷰컨트롤러 관계 설정
+//        addChild(weekBarVC)
+//        weekBarVC.didMove(toParent: self)
+//    }
     
     
     // WeekBarVC의 뷰를 AnalysisVC에 추가하는 메서드
-    func addChangeBarView() {
-        // WeekBarVC의 뷰를 AnalysisVC의 contentView에 추가
-        changeBarVC.view.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(changeBarVC.view)
-            
-        // Autolayout constraints 설정
-        NSLayoutConstraint.activate([
-            changeBarVC.view.topAnchor.constraint(equalTo: Change.topAnchor, constant: -100),
-            changeBarVC.view.trailingAnchor.constraint(equalTo: Change.centerXAnchor, constant: 110),
-            changeBarVC.view.widthAnchor.constraint(equalToConstant: 343),
-            changeBarVC.view.heightAnchor.constraint(equalToConstant: 320) // 적절한 크기로 조정
-        ])
-            
-        // 부모-자식 뷰컨트롤러 관계 설정
-        addChild(weekBarVC)
-        weekBarVC.didMove(toParent: self)
-    }
+//    func addChangeBarView() {
+//        // WeekBarVC의 뷰를 AnalysisVC의 contentView에 추가
+//        changeBarVC.view.translatesAutoresizingMaskIntoConstraints = false
+//        contentView.addSubview(changeBarVC.view)
+//            
+//        // Autolayout constraints 설정
+//        NSLayoutConstraint.activate([
+//            changeBarVC.view.topAnchor.constraint(equalTo: Change.topAnchor, constant: -100),
+//            changeBarVC.view.trailingAnchor.constraint(equalTo: Change.centerXAnchor, constant: 110),
+//            changeBarVC.view.widthAnchor.constraint(equalToConstant: 343),
+//            changeBarVC.view.heightAnchor.constraint(equalToConstant: 320) // 적절한 크기로 조정
+//        ])
+//            
+//        // 부모-자식 뷰컨트롤러 관계 설정
+//        addChild(weekBarVC)
+//        weekBarVC.didMove(toParent: self)
+//    }
 
     
     func rankingUI() {

@@ -8,12 +8,12 @@
 import UIKit
 import SnapKit
 import Then
-import RKPieChart
+//import RKPieChart
 
 class PieChart: UIViewController {
     
     let titleLabel = UILabel()
-    var chartView: RKPieChartView!
+//    var chartView: RKPieChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,41 +26,41 @@ class PieChart: UIViewController {
     // MARK: - 다른 부분을 탭하면 "총 사용 시간"으로 넘어가는 로직은 나중에 디자인 다 나와서 파이차트 백그라운드 이미지 받으면 (파이차트, 버튼 3개 제외) 그 이미지 클릭하면 넘어가게끔 나중에 구현.
     
     func totalTimeUI() {
-            let singleItem = RKPieChartItem(ratio: 23, color: UIColor.primary500, title: "")
-            
-            chartView = RKPieChartView(items: [singleItem], centerTitle: "")
-            chartView.circleColor = .base400
-            chartView.arcWidth = 10
-            chartView.isIntensityActivated = false
-            chartView.style = .butt
-            chartView.isTitleViewHidden = true
-            chartView.isAnimationActivated = true
-
-            // 배경 이미지 설정을 위한 UIView 추가
-            let backgroundView = UIImageView(image: UIImage(named: "chartBackground"))
-            backgroundView.contentMode = .scaleAspectFill // 이미지가 화면에 꽉 차도록 설정
-            chartView.insertSubview(backgroundView, at: 0) // chartView에 배경 이미지 추가
-            
-            // 배경 이미지가 chartView와 같은 크기가 되도록 제약 추가
-            backgroundView.snp.makeConstraints { make in
-                make.edges.equalToSuperview()
-            }
-
-            self.view.addSubview(chartView)
-            
-            // Create a label and add it to the chartView
-            let label = UILabel()
-            label.text = "23%"
-            label.textAlignment = .center
-            label.textColor = .white
-            chartView.addSubview(label)
-            
-            // Adding constraints to center the label within the chartView
-            label.snp.makeConstraints { make in
-                make.centerX.equalToSuperview()
-                make.centerY.equalToSuperview()
-                // Add constraints for label size as needed
-            }
+//            let singleItem = RKPieChartItem(ratio: 23, color: UIColor.primary500, title: "")
+//            
+//            chartView = RKPieChartView(items: [singleItem], centerTitle: "")
+//            chartView.circleColor = .base400
+//            chartView.arcWidth = 10
+//            chartView.isIntensityActivated = false
+//            chartView.style = .butt
+//            chartView.isTitleViewHidden = true
+//            chartView.isAnimationActivated = true
+//
+//            // 배경 이미지 설정을 위한 UIView 추가
+//            let backgroundView = UIImageView(image: UIImage(named: "chartBackground"))
+//            backgroundView.contentMode = .scaleAspectFill // 이미지가 화면에 꽉 차도록 설정
+//            chartView.insertSubview(backgroundView, at: 0) // chartView에 배경 이미지 추가
+//            
+//            // 배경 이미지가 chartView와 같은 크기가 되도록 제약 추가
+//            backgroundView.snp.makeConstraints { make in
+//                make.edges.equalToSuperview()
+//            }
+//
+//            self.view.addSubview(chartView)
+//            
+//            // Create a label and add it to the chartView
+//            let label = UILabel()
+//            label.text = "23%"
+//            label.textAlignment = .center
+//            label.textColor = .white
+//            chartView.addSubview(label)
+//            
+//            // Adding constraints to center the label within the chartView
+//            label.snp.makeConstraints { make in
+//                make.centerX.equalToSuperview()
+//                make.centerY.equalToSuperview()
+//                // Add constraints for label size as needed
+//            }
             
             // chartView에 대한 다른 제약 설정...
         }
@@ -141,11 +141,11 @@ class PieChart: UIViewController {
 //    }
 
     func setConstraints() {
-        chartView.snp.makeConstraints { make in
-            make.width.height.equalTo(115)
-//            make.centerX.centerY.equalToSuperview()
-//            make.top.equalToSuperview().offset(100)
-        }
+//        chartView.snp.makeConstraints { make in
+//            make.width.height.equalTo(115)
+////            make.centerX.centerY.equalToSuperview()
+////            make.top.equalToSuperview().offset(100)
+//        }
     }
     
 }

@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		210B7B222B3FEA6600D4105D /* (null) in Sources */ = {isa = PBXBuildFile; };
-		210B7B262B3FEF8E00D4105D /* (null) in Sources */ = {isa = PBXBuildFile; };
-		210B7B2E2B3FF32300D4105D /* (null) in Sources */ = {isa = PBXBuildFile; };
-		210B7B302B3FF4C000D4105D /* (null) in Sources */ = {isa = PBXBuildFile; };
-		210B7B322B3FFF1800D4105D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		210B7B222B3FEA6600D4105D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		210B7B262B3FEF8E00D4105D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		210B7B2E2B3FF32300D4105D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		210B7B302B3FF4C000D4105D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		210B7B322B3FFF1800D4105D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		210B7B382B400D5100D4105D /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B372B400D5100D4105D /* ActionTableViewCell.swift */; };
 		210B7B3A2B400D6F00D4105D /* ActionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B392B400D6F00D4105D /* ActionModel.swift */; };
 		210B7B3E2B400DB900D4105D /* LimitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B3D2B400DB900D4105D /* LimitTableViewCell.swift */; };
@@ -52,6 +52,7 @@
 		2169E8352B3DA3FD00A8DC07 /* SelectLimitAppVMSU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8342B3DA3FD00A8DC07 /* SelectLimitAppVMSU.swift */; };
 		2169E8372B3DD3A600A8DC07 /* ScreenTimeVMSU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8362B3DD3A600A8DC07 /* ScreenTimeVMSU.swift */; };
 		2169E8392B3DD42C00A8DC07 /* AppStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8382B3DD42C00A8DC07 /* AppStorageManager.swift */; };
+		216C9DFE2CAFBE44009AEB32 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 216C9DFD2CAFBE44009AEB32 /* Then */; };
 		21741A072B41694F0062B0D7 /* ScheduleVMSU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E82C2B3D795200A8DC07 /* ScheduleVMSU.swift */; };
 		21741A082B4169600062B0D7 /* DeviceActivtyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8232B3D787500A8DC07 /* DeviceActivtyManager.swift */; };
 		21741A0A2B41699E0062B0D7 /* shared.xcconfig in Sources */ = {isa = PBXBuildFile; fileRef = 21741A092B41699E0062B0D7 /* shared.xcconfig */; };
@@ -73,25 +74,17 @@
 		2184A46F2B48B31200694F0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214CC4842B3C4784003B74EB /* Assets.xcassets */; };
 		2184A4712B48B74900694F0F /* bannerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2184A4702B48B74900694F0F /* bannerTest.swift */; };
 		2184A6F52B46832600008073 /* BannerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2184A6F42B46832600008073 /* BannerAPI.swift */; };
+		21D9F43E2CAFB44800234F04 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21D9F43D2CAFB44800234F04 /* SnapKit */; };
+		21D9F4402CAFB44800234F04 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 21D9F43F2CAFB44800234F04 /* SnapKit-Dynamic */; };
 		21E458782B41984300AFC7F4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21E458772B41984300AFC7F4 /* Colors.xcassets */; };
 		21E4587C2B41F22D00AFC7F4 /* DeviceID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4587B2B41F22D00AFC7F4 /* DeviceID.swift */; };
 		21E4587F2B42007800AFC7F4 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4587E2B42007800AFC7F4 /* Buttons.swift */; };
-		21E6EC502C29899700043A51 /* AppleSDGothicNeoH.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21E6EC472C29899700043A51 /* AppleSDGothicNeoH.ttf */; };
-		21E6EC512C29899700043A51 /* AppleSDGothicNeoR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21E6EC482C29899700043A51 /* AppleSDGothicNeoR.ttf */; };
-		21E6EC522C29899700043A51 /* AppleSDGothicNeoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21E6EC492C29899700043A51 /* AppleSDGothicNeoM.ttf */; };
-		21E6EC532C29899700043A51 /* AppleSDGothicNeoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21E6EC4A2C29899700043A51 /* AppleSDGothicNeoB.ttf */; };
-		21E6EC542C29899700043A51 /* AppleSDGothicNeoSB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21E6EC4B2C29899700043A51 /* AppleSDGothicNeoSB.ttf */; };
-		21E6EC552C29899700043A51 /* AppleSDGothicNeoUL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21E6EC4C2C29899700043A51 /* AppleSDGothicNeoUL.ttf */; };
-		21E6EC562C29899700043A51 /* AppleSDGothicNeoT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21E6EC4D2C29899700043A51 /* AppleSDGothicNeoT.ttf */; };
-		21E6EC572C29899700043A51 /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21E6EC4E2C29899700043A51 /* AppleSDGothicNeoEB.ttf */; };
-		21E6EC582C29899700043A51 /* AppleSDGothicNeoL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21E6EC4F2C29899700043A51 /* AppleSDGothicNeoL.ttf */; };
 		2D1BD4CD2B42A20C00EE8374 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1BD4CC2B42A20C00EE8374 /* ProfileModel.swift */; };
 		2D1BD4D12B42A28F00EE8374 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1BD4D02B42A28F00EE8374 /* ProfileTableViewCell.swift */; };
 		2D6DF9332B45260A00CD0248 /* BeforeAnalysisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6DF9322B45260A00CD0248 /* BeforeAnalysisVC.swift */; };
 		2D6DF9352B45318900CD0248 /* WeekBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6DF9342B45318900CD0248 /* WeekBarVC.swift */; };
-		2D6DF93D2B4540A900CD0248 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 2D6DF93C2B4540A900CD0248 /* DGCharts */; };
 		2DB75DCB2B458CFE005A0E0A /* ChangeBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB75DCA2B458CFE005A0E0A /* ChangeBarVC.swift */; };
-		46CE229D2B9F38188EAAC775 /* Pods_Sabotage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A337CFE6D14A7B27FE531F40 /* Pods_Sabotage.framework */; };
+		540A4916CFF826B627CECDD2 /* Pods_Sabotage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48D479018274F8E2DDEBAA62 /* Pods_Sabotage.framework */; };
 		8800F0A72B421A25005CB6D2 /* FontSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800F0A62B421A25005CB6D2 /* FontSystem.swift */; };
 		883D8E192B42AA03003DD8C5 /* FontSystemUikit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883D8E182B42AA03003DD8C5 /* FontSystemUikit.swift */; };
 		8852C05D2B3C491600219714 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8852C05C2B3C491600219714 /* ProfileVC.swift */; };
@@ -221,15 +214,6 @@
 		21E458772B41984300AFC7F4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		21E4587B2B41F22D00AFC7F4 /* DeviceID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceID.swift; sourceTree = "<group>"; };
 		21E4587E2B42007800AFC7F4 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
-		21E6EC472C29899700043A51 /* AppleSDGothicNeoH.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoH.ttf; path = "../../../../Apple 산돌고딕 Neo/AppleSDGothicNeoH.ttf"; sourceTree = "<group>"; };
-		21E6EC482C29899700043A51 /* AppleSDGothicNeoR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoR.ttf; path = "../../../../Apple 산돌고딕 Neo/AppleSDGothicNeoR.ttf"; sourceTree = "<group>"; };
-		21E6EC492C29899700043A51 /* AppleSDGothicNeoM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoM.ttf; path = "../../../../Apple 산돌고딕 Neo/AppleSDGothicNeoM.ttf"; sourceTree = "<group>"; };
-		21E6EC4A2C29899700043A51 /* AppleSDGothicNeoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoB.ttf; path = "../../../../Apple 산돌고딕 Neo/AppleSDGothicNeoB.ttf"; sourceTree = "<group>"; };
-		21E6EC4B2C29899700043A51 /* AppleSDGothicNeoSB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoSB.ttf; path = "../../../../Apple 산돌고딕 Neo/AppleSDGothicNeoSB.ttf"; sourceTree = "<group>"; };
-		21E6EC4C2C29899700043A51 /* AppleSDGothicNeoUL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoUL.ttf; path = "../../../../Apple 산돌고딕 Neo/AppleSDGothicNeoUL.ttf"; sourceTree = "<group>"; };
-		21E6EC4D2C29899700043A51 /* AppleSDGothicNeoT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoT.ttf; path = "../../../../Apple 산돌고딕 Neo/AppleSDGothicNeoT.ttf"; sourceTree = "<group>"; };
-		21E6EC4E2C29899700043A51 /* AppleSDGothicNeoEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoEB.ttf; path = "../../../../Apple 산돌고딕 Neo/AppleSDGothicNeoEB.ttf"; sourceTree = "<group>"; };
-		21E6EC4F2C29899700043A51 /* AppleSDGothicNeoL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoL.ttf; path = "../../../../Apple 산돌고딕 Neo/AppleSDGothicNeoL.ttf"; sourceTree = "<group>"; };
 		2D1BD4CC2B42A20C00EE8374 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		2D1BD4D02B42A28F00EE8374 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		2D6DF9322B45260A00CD0248 /* BeforeAnalysisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeAnalysisVC.swift; sourceTree = "<group>"; };
@@ -240,7 +224,8 @@
 		2DB75DBE2B458496005A0E0A /* AppleSDGothicNeoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoB.ttf; path = "/Downloads/Apple 산돌고딕 Neo/AppleSDGothicNeoB.ttf"; sourceTree = "<absolute>"; };
 		2DB75DC02B458496005A0E0A /* AppleSDGothicNeoR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoR.ttf; path = "/Downloads/Apple 산돌고딕 Neo/AppleSDGothicNeoR.ttf"; sourceTree = "<absolute>"; };
 		2DB75DCA2B458CFE005A0E0A /* ChangeBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBarVC.swift; sourceTree = "<group>"; };
-		4CDB901FE5BF7BB44F944F64 /* Pods-Sabotage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sabotage.release.xcconfig"; path = "Target Support Files/Pods-Sabotage/Pods-Sabotage.release.xcconfig"; sourceTree = "<group>"; };
+		3F9BCD0283245733A4456C4A /* Pods-Sabotage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sabotage.release.xcconfig"; path = "Target Support Files/Pods-Sabotage/Pods-Sabotage.release.xcconfig"; sourceTree = "<group>"; };
+		48D479018274F8E2DDEBAA62 /* Pods_Sabotage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sabotage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8800F0A62B421A25005CB6D2 /* FontSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSystem.swift; sourceTree = "<group>"; };
 		883D8E182B42AA03003DD8C5 /* FontSystemUikit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSystemUikit.swift; sourceTree = "<group>"; };
 		8852C05C2B3C491600219714 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -252,8 +237,7 @@
 		88637AB62B3C70ED006F1FF6 /* SaveActionItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveActionItemController.swift; sourceTree = "<group>"; };
 		88A521032B41654F00CB1DCE /* RankingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableView.swift; sourceTree = "<group>"; };
 		88ABDAB12B3EA3BD0011682E /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
-		9501FCAC4D3822BAE70B68E5 /* Pods-Sabotage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sabotage.debug.xcconfig"; path = "Target Support Files/Pods-Sabotage/Pods-Sabotage.debug.xcconfig"; sourceTree = "<group>"; };
-		A337CFE6D14A7B27FE531F40 /* Pods_Sabotage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sabotage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2E332A64961A0E233B47658 /* Pods-Sabotage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sabotage.debug.xcconfig"; path = "Target Support Files/Pods-Sabotage/Pods-Sabotage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,8 +245,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D6DF93D2B4540A900CD0248 /* DGCharts in Frameworks */,
-				46CE229D2B9F38188EAAC775 /* Pods_Sabotage.framework in Frameworks */,
+				216C9DFE2CAFBE44009AEB32 /* Then in Frameworks */,
+				21D9F4402CAFB44800234F04 /* SnapKit-Dynamic in Frameworks */,
+				21D9F43E2CAFB44800234F04 /* SnapKit in Frameworks */,
+				540A4916CFF826B627CECDD2 /* Pods_Sabotage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,15 +515,6 @@
 		883D8E052B42A68B003DD8C5 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				21E6EC4A2C29899700043A51 /* AppleSDGothicNeoB.ttf */,
-				21E6EC4E2C29899700043A51 /* AppleSDGothicNeoEB.ttf */,
-				21E6EC472C29899700043A51 /* AppleSDGothicNeoH.ttf */,
-				21E6EC4F2C29899700043A51 /* AppleSDGothicNeoL.ttf */,
-				21E6EC492C29899700043A51 /* AppleSDGothicNeoM.ttf */,
-				21E6EC482C29899700043A51 /* AppleSDGothicNeoR.ttf */,
-				21E6EC4B2C29899700043A51 /* AppleSDGothicNeoSB.ttf */,
-				21E6EC4D2C29899700043A51 /* AppleSDGothicNeoT.ttf */,
-				21E6EC4C2C29899700043A51 /* AppleSDGothicNeoUL.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -637,7 +614,7 @@
 				2169E7D82B3D750C00A8DC07 /* DeviceActivity.framework */,
 				2169E7EB2B3D752A00A8DC07 /* ManagedSettings.framework */,
 				2169E7FE2B3D754400A8DC07 /* ManagedSettingsUI.framework */,
-				A337CFE6D14A7B27FE531F40 /* Pods_Sabotage.framework */,
+				48D479018274F8E2DDEBAA62 /* Pods_Sabotage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -645,8 +622,8 @@
 		C4B8D01A6685DE79369298BF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9501FCAC4D3822BAE70B68E5 /* Pods-Sabotage.debug.xcconfig */,
-				4CDB901FE5BF7BB44F944F64 /* Pods-Sabotage.release.xcconfig */,
+				A2E332A64961A0E233B47658 /* Pods-Sabotage.debug.xcconfig */,
+				3F9BCD0283245733A4456C4A /* Pods-Sabotage.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -658,13 +635,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 214CC48B2B3C4784003B74EB /* Build configuration list for PBXNativeTarget "Sabotage" */;
 			buildPhases = (
-				F940D3DC40BF18A48D8313A6 /* [CP] Check Pods Manifest.lock */,
+				C57AD32A0D1503E63A3195C1 /* [CP] Check Pods Manifest.lock */,
 				214CC4792B3C4782003B74EB /* Sources */,
 				214CC47A2B3C4782003B74EB /* Frameworks */,
 				214CC47B2B3C4782003B74EB /* Resources */,
 				2169E7E52B3D750C00A8DC07 /* Embed Foundation Extensions */,
 				2169E81F2B3D75C400A8DC07 /* Embed ExtensionKit Extensions */,
-				7BA3C2E37E36100424F49ADD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -676,7 +652,9 @@
 			);
 			name = Sabotage;
 			packageProductDependencies = (
-				2D6DF93C2B4540A900CD0248 /* DGCharts */,
+				21D9F43D2CAFB44800234F04 /* SnapKit */,
+				21D9F43F2CAFB44800234F04 /* SnapKit-Dynamic */,
+				216C9DFD2CAFBE44009AEB32 /* Then */,
 			);
 			productName = Sabotage;
 			productReference = 214CC47D2B3C4782003B74EB /* Sabotage.app */;
@@ -787,7 +765,8 @@
 			);
 			mainGroup = 214CC4742B3C4782003B74EB;
 			packageReferences = (
-				2D6DF93B2B4540A900CD0248 /* XCRemoteSwiftPackageReference "Charts" */,
+				21D9F43C2CAFB44800234F04 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				216C9DFC2CAFBE44009AEB32 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = 214CC47E2B3C4782003B74EB /* Products */;
 			projectDirPath = "";
@@ -807,19 +786,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21E6EC542C29899700043A51 /* AppleSDGothicNeoSB.ttf in Resources */,
 				214CC4882B3C4784003B74EB /* Preview Assets.xcassets in Resources */,
-				21E6EC522C29899700043A51 /* AppleSDGothicNeoM.ttf in Resources */,
-				21E6EC582C29899700043A51 /* AppleSDGothicNeoL.ttf in Resources */,
 				21E458782B41984300AFC7F4 /* Colors.xcassets in Resources */,
-				21E6EC552C29899700043A51 /* AppleSDGothicNeoUL.ttf in Resources */,
-				21E6EC512C29899700043A51 /* AppleSDGothicNeoR.ttf in Resources */,
-				21E6EC532C29899700043A51 /* AppleSDGothicNeoB.ttf in Resources */,
-				21E6EC562C29899700043A51 /* AppleSDGothicNeoT.ttf in Resources */,
 				214CC4852B3C4784003B74EB /* Assets.xcassets in Resources */,
 				21741A1B2B417CCB0062B0D7 /* DeviceActivityMonitor.appex in Resources */,
-				21E6EC572C29899700043A51 /* AppleSDGothicNeoEB.ttf in Resources */,
-				21E6EC502C29899700043A51 /* AppleSDGothicNeoH.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,24 +830,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7BA3C2E37E36100424F49ADD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sabotage/Pods-Sabotage-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sabotage/Pods-Sabotage-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sabotage/Pods-Sabotage-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F940D3DC40BF18A48D8313A6 /* [CP] Check Pods Manifest.lock */ = {
+		C57AD32A0D1503E63A3195C1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -928,7 +881,7 @@
 				88637AB72B3C70ED006F1FF6 /* SaveActionItemController.swift in Sources */,
 				2169E82D2B3D795200A8DC07 /* ScheduleVMSU.swift in Sources */,
 				2169E8302B3D79F400A8DC07 /* Bundle_Extension.swift in Sources */,
-				210B7B322B3FFF1800D4105D /* (null) in Sources */,
+				210B7B322B3FFF1800D4105D /* BuildFile in Sources */,
 				8852C0652B3C4AB300219714 /* MainVC.swift in Sources */,
 				2167F4D02B44B7040025F842 /* notiTest.swift in Sources */,
 				2169E8392B3DD42C00A8DC07 /* AppStorageManager.swift in Sources */,
@@ -940,23 +893,23 @@
 				8852C05D2B3C491600219714 /* ProfileVC.swift in Sources */,
 				883D8E192B42AA03003DD8C5 /* FontSystemUikit.swift in Sources */,
 				214CC4832B3C4782003B74EB /* ContentView.swift in Sources */,
-				210B7B262B3FEF8E00D4105D /* (null) in Sources */,
+				210B7B262B3FEF8E00D4105D /* BuildFile in Sources */,
 				214CC4812B3C4782003B74EB /* SabotageApp.swift in Sources */,
 				8852C06D2B3C4B5C00219714 /* LimitItemVC.swift in Sources */,
 				2169E82B2B3D793800A8DC07 /* PermissionVMSU.swift in Sources */,
 				2184A6F52B46832600008073 /* BannerAPI.swift in Sources */,
 				21741A132B416FD40062B0D7 /* ScreenTimeActivityReport.swift in Sources */,
 				210B7B402B400DD600D4105D /* LimitModel.swift in Sources */,
-				210B7B222B3FEA6600D4105D /* (null) in Sources */,
+				210B7B222B3FEA6600D4105D /* BuildFile in Sources */,
 				21E4587C2B41F22D00AFC7F4 /* DeviceID.swift in Sources */,
 				2D6DF9352B45318900CD0248 /* WeekBarVC.swift in Sources */,
 				210B7B422B400E4000D4105D /* MainTableView.swift in Sources */,
 				2169E8242B3D787500A8DC07 /* DeviceActivtyManager.swift in Sources */,
 				2169E8352B3DA3FD00A8DC07 /* SelectLimitAppVMSU.swift in Sources */,
-				210B7B302B3FF4C000D4105D /* (null) in Sources */,
+				210B7B302B3FF4C000D4105D /* BuildFile in Sources */,
 				210B7B3E2B400DB900D4105D /* LimitTableViewCell.swift in Sources */,
 				21741A112B416FC20062B0D7 /* TotalActivityReport.swift in Sources */,
-				210B7B2E2B3FF32300D4105D /* (null) in Sources */,
+				210B7B2E2B3FF32300D4105D /* BuildFile in Sources */,
 				8852C06B2B3C4B2800219714 /* AddActionItemController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1157,7 +1110,7 @@
 		};
 		214CC48C2B3C4784003B74EB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9501FCAC4D3822BAE70B68E5 /* Pods-Sabotage.debug.xcconfig */;
+			baseConfigurationReference = A2E332A64961A0E233B47658 /* Pods-Sabotage.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1191,7 +1144,7 @@
 		};
 		214CC48D2B3C4784003B74EB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CDB901FE5BF7BB44F944F64 /* Pods-Sabotage.release.xcconfig */;
+			baseConfigurationReference = 3F9BCD0283245733A4456C4A /* Pods-Sabotage.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1499,21 +1452,39 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2D6DF93B2B4540A900CD0248 /* XCRemoteSwiftPackageReference "Charts" */ = {
+		216C9DFC2CAFBE44009AEB32 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			repositoryURL = "https://github.com/devxoul/Then.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				minimumVersion = 3.0.0;
+			};
+		};
+		21D9F43C2CAFB44800234F04 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2D6DF93C2B4540A900CD0248 /* DGCharts */ = {
+		216C9DFD2CAFBE44009AEB32 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2D6DF93B2B4540A900CD0248 /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = DGCharts;
+			package = 216C9DFC2CAFBE44009AEB32 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		21D9F43D2CAFB44800234F04 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21D9F43C2CAFB44800234F04 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		21D9F43F2CAFB44800234F04 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21D9F43C2CAFB44800234F04 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

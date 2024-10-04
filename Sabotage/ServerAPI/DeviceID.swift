@@ -5,7 +5,7 @@
 //  Created by 김하람 on 1/1/24.
 //
 import UIKit
-import TAKUUID
+//import TAKUUID
 import Foundation
 import SwiftUI
 
@@ -59,14 +59,14 @@ func deviceIDPostRequest(with deviceId: String) {
 }
 
 func initUUID() {
-    let uuidStorage = TAKUUIDStorage.sharedInstance()
-    uuidStorage.migrate()
-    if let uuid = uuidStorage.findOrCreate() {
-        print("🔑 = \(uuid)")
-        deviceIDPostRequest(with: uuid)
-    } else {
-        print("🔑 = nil")
-    }
+//    let uuidStorage = TAKUUIDStorage.sharedInstance()
+//    uuidStorage.migrate()
+//    if let uuid = uuidStorage.findOrCreate() {
+//        print("🔑 = \(uuid)")
+//        deviceIDPostRequest(with: uuid)
+//    } else {
+//        print("🔑 = nil")
+//    }
     
 }
 
