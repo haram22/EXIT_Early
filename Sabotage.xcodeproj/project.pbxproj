@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		210B7B222B3FEA6600D4105D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		210B7B262B3FEF8E00D4105D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		210B7B2E2B3FF32300D4105D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		210B7B302B3FF4C000D4105D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		210B7B322B3FFF1800D4105D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		210B7B222B3FEA6600D4105D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		210B7B262B3FEF8E00D4105D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		210B7B2E2B3FF32300D4105D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		210B7B302B3FF4C000D4105D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		210B7B322B3FFF1800D4105D /* (null) in Sources */ = {isa = PBXBuildFile; };
 		210B7B382B400D5100D4105D /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B372B400D5100D4105D /* ActionTableViewCell.swift */; };
 		210B7B3A2B400D6F00D4105D /* ActionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B392B400D6F00D4105D /* ActionModel.swift */; };
 		210B7B3E2B400DB900D4105D /* LimitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B3D2B400DB900D4105D /* LimitTableViewCell.swift */; };
@@ -75,7 +75,6 @@
 		2184A4712B48B74900694F0F /* bannerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2184A4702B48B74900694F0F /* bannerTest.swift */; };
 		2184A6F52B46832600008073 /* BannerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2184A6F42B46832600008073 /* BannerAPI.swift */; };
 		21D9F43E2CAFB44800234F04 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21D9F43D2CAFB44800234F04 /* SnapKit */; };
-		21D9F4402CAFB44800234F04 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 21D9F43F2CAFB44800234F04 /* SnapKit-Dynamic */; };
 		21E458782B41984300AFC7F4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21E458772B41984300AFC7F4 /* Colors.xcassets */; };
 		21E4587C2B41F22D00AFC7F4 /* DeviceID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4587B2B41F22D00AFC7F4 /* DeviceID.swift */; };
 		21E4587F2B42007800AFC7F4 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4587E2B42007800AFC7F4 /* Buttons.swift */; };
@@ -246,7 +245,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				216C9DFE2CAFBE44009AEB32 /* Then in Frameworks */,
-				21D9F4402CAFB44800234F04 /* SnapKit-Dynamic in Frameworks */,
 				21D9F43E2CAFB44800234F04 /* SnapKit in Frameworks */,
 				540A4916CFF826B627CECDD2 /* Pods_Sabotage.framework in Frameworks */,
 			);
@@ -653,7 +651,6 @@
 			name = Sabotage;
 			packageProductDependencies = (
 				21D9F43D2CAFB44800234F04 /* SnapKit */,
-				21D9F43F2CAFB44800234F04 /* SnapKit-Dynamic */,
 				216C9DFD2CAFBE44009AEB32 /* Then */,
 			);
 			productName = Sabotage;
@@ -881,7 +878,7 @@
 				88637AB72B3C70ED006F1FF6 /* SaveActionItemController.swift in Sources */,
 				2169E82D2B3D795200A8DC07 /* ScheduleVMSU.swift in Sources */,
 				2169E8302B3D79F400A8DC07 /* Bundle_Extension.swift in Sources */,
-				210B7B322B3FFF1800D4105D /* BuildFile in Sources */,
+				210B7B322B3FFF1800D4105D /* (null) in Sources */,
 				8852C0652B3C4AB300219714 /* MainVC.swift in Sources */,
 				2167F4D02B44B7040025F842 /* notiTest.swift in Sources */,
 				2169E8392B3DD42C00A8DC07 /* AppStorageManager.swift in Sources */,
@@ -893,23 +890,23 @@
 				8852C05D2B3C491600219714 /* ProfileVC.swift in Sources */,
 				883D8E192B42AA03003DD8C5 /* FontSystemUikit.swift in Sources */,
 				214CC4832B3C4782003B74EB /* ContentView.swift in Sources */,
-				210B7B262B3FEF8E00D4105D /* BuildFile in Sources */,
+				210B7B262B3FEF8E00D4105D /* (null) in Sources */,
 				214CC4812B3C4782003B74EB /* SabotageApp.swift in Sources */,
 				8852C06D2B3C4B5C00219714 /* LimitItemVC.swift in Sources */,
 				2169E82B2B3D793800A8DC07 /* PermissionVMSU.swift in Sources */,
 				2184A6F52B46832600008073 /* BannerAPI.swift in Sources */,
 				21741A132B416FD40062B0D7 /* ScreenTimeActivityReport.swift in Sources */,
 				210B7B402B400DD600D4105D /* LimitModel.swift in Sources */,
-				210B7B222B3FEA6600D4105D /* BuildFile in Sources */,
+				210B7B222B3FEA6600D4105D /* (null) in Sources */,
 				21E4587C2B41F22D00AFC7F4 /* DeviceID.swift in Sources */,
 				2D6DF9352B45318900CD0248 /* WeekBarVC.swift in Sources */,
 				210B7B422B400E4000D4105D /* MainTableView.swift in Sources */,
 				2169E8242B3D787500A8DC07 /* DeviceActivtyManager.swift in Sources */,
 				2169E8352B3DA3FD00A8DC07 /* SelectLimitAppVMSU.swift in Sources */,
-				210B7B302B3FF4C000D4105D /* BuildFile in Sources */,
+				210B7B302B3FF4C000D4105D /* (null) in Sources */,
 				210B7B3E2B400DB900D4105D /* LimitTableViewCell.swift in Sources */,
 				21741A112B416FC20062B0D7 /* TotalActivityReport.swift in Sources */,
-				210B7B2E2B3FF32300D4105D /* BuildFile in Sources */,
+				210B7B2E2B3FF32300D4105D /* (null) in Sources */,
 				8852C06B2B3C4B2800219714 /* AddActionItemController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1480,11 +1477,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 21D9F43C2CAFB44800234F04 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		21D9F43F2CAFB44800234F04 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 21D9F43C2CAFB44800234F04 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
