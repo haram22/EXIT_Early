@@ -6,23 +6,25 @@
 
 import UIKit
 import SnapKit
+import RealmSwift
 
 class AddActionItemController: UIViewController, UITextFieldDelegate {
-    
     var selectedCard: Int = 0
+    var realm: Realm!
+    var actionItems: Results<CategoryItem>!
     
     // MARK: 변수
     let closeButton = UIImageView(image: UIImage(named: "closeButton.png"))
     let Title = UIImageView(image: UIImage(named: "action_title.png"))
     let tracker2 = UIImageView(image: UIImage(named: "action_tracker2.png"))
-    let subtitle = UIImageView(image: UIImage(named: "addaction_subtitle.png"))
+    let subtitle = UILabel()
     let category1 = UIImageView(image: UIImage(named: "addaction_category1.png"))
     let inputItem = UIImageView(image: UIImage(named: "addaction_inputitem.png"))
     
     let inputField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "예) 자리에 앉기"
-        textField.backgroundColor = .clear // Set the background color to clear
+        textField.backgroundColor = .clear
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -40,22 +42,13 @@ class AddActionItemController: UIViewController, UITextFieldDelegate {
     
     // MARK: UI
     func setUI() {
-        
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(closeButton)
-        
-        
         Title.contentMode = .center
-        Title.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(Title)
-        
         tracker2.contentMode = .scaleAspectFit
-        tracker2.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(tracker2)
-        
         subtitle.contentMode = .scaleAspectFit
-        subtitle.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(subtitle)
+        
+        subtitle.text = "이 활동을 위해서\n가장 작게 시작할 수 있는 일을\n자세하게 작성해 주세요"
+        subtitle.font = .systemFont(ofSize: 22, weight: .medium)
+        subtitle.numberOfLines = 0
         
         // category 이미지 설정
         let categoryImageName = "addaction_category\(selectedCard).png"
@@ -65,76 +58,122 @@ class AddActionItemController: UIViewController, UITextFieldDelegate {
             // 선택된 카드에 맞는 이미지가 없을 경우에 대한 처리
             print("해당하는 이미지가 없습니다.")
         }
-        category1.contentMode = .scaleAspectFit
-        category1.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(category1)
-        
-        inputItem.contentMode = .scaleAspectFit
-        inputItem.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(inputItem)
-        
-        view.addSubview(inputField)
-        view.addSubview(backButton)
-        
-        completeButton.contentMode = .scaleAspectFit
-        completeButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(completeButton)
     }
     
     // MARK: constraint
     func setConstraint() {
-        NSLayoutConstraint.activate([
-            
-            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            closeButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            closeButton.widthAnchor.constraint(equalToConstant: 40),
-            closeButton.heightAnchor.constraint(equalToConstant: 40),
-            
-            Title.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            Title.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            Title.widthAnchor.constraint(equalToConstant: 80),
-            Title.heightAnchor.constraint(equalToConstant: 25),
-            
-            tracker2.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
-            tracker2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            tracker2.widthAnchor.constraint(equalToConstant: 415),
-            tracker2.heightAnchor.constraint(equalToConstant: 50),
-            
-            subtitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
-            subtitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            subtitle.widthAnchor.constraint(equalToConstant: 280),
-            subtitle.heightAnchor.constraint(equalToConstant: 120),
-            
-            category1.topAnchor.constraint(equalTo: view.topAnchor, constant: 288),
-            category1.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            category1.widthAnchor.constraint(equalToConstant: 370),
-            category1.heightAnchor.constraint(equalToConstant: 90),
-            
-            inputItem.topAnchor.constraint(equalTo: view.topAnchor, constant: 400),
-            inputItem.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            inputItem.widthAnchor.constraint(equalToConstant: 370),
-            inputItem.heightAnchor.constraint(equalToConstant: 120),
-            
-            inputField.topAnchor.constraint(equalTo: inputItem.topAnchor, constant: 10),
-            inputField.leadingAnchor.constraint(equalTo: inputItem.leadingAnchor, constant: 10),
-            inputField.trailingAnchor.constraint(equalTo: inputItem.trailingAnchor, constant: -10),
-            inputField.bottomAnchor.constraint(equalTo: inputItem.bottomAnchor, constant: -10),
-            
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -215),
-            backButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            backButton.heightAnchor.constraint(equalToConstant: 70),
-            
-            completeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 215),
-            completeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            completeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            completeButton.heightAnchor.constraint(equalToConstant: 70),
-        ])
+        closeButton.then {
+            view.addSubview($0)
+            $0.snp.makeConstraints { make in
+                make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
+                make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(10)
+                make.width.equalTo(40)
+                make.height.equalTo(40)
+            }
+        }
+        
+        Title.then {
+            view.addSubview($0)
+            $0.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(30)
+                make.width.equalTo(80)
+                make.height.equalTo(25)
+            }
+        }
+        
+        tracker2.then {
+            view.addSubview($0)
+            $0.snp.makeConstraints { make in
+                make.top.equalTo(view.snp.top).offset(110)
+                make.leading.equalToSuperview().offset(0)
+                make.trailing.equalTo(-3)
+                make.width.equalTo(415)
+                make.height.equalTo(50)
+            }
+        }
+        
+        subtitle.then {
+            view.addSubview($0)
+            $0.snp.makeConstraints { make in
+                make.top.equalTo(view.snp.top).offset(150)
+                make.leading.equalToSuperview().offset(30)
+                make.width.equalTo(280)
+                make.height.equalTo(120)
+            }
+        }
+        
+        category1.then {
+            view.addSubview($0)
+            $0.contentMode = .scaleAspectFit
+            $0.snp.makeConstraints { make in
+                make.top.equalTo(view.snp.top).offset(288)
+                make.leading.equalToSuperview().offset(20)
+                make.trailing.equalTo(-20)
+                make.height.equalTo(90)
+            }
+        }
+        
+        inputItem.then {
+            view.addSubview($0)
+            $0.backgroundColor = .clear
+            $0.contentMode = .scaleAspectFit
+            $0.snp.makeConstraints { make in
+                make.top.equalTo(view.snp.top).offset(400)
+                make.leading.equalToSuperview().offset(20)
+                make.trailing.equalTo(-10)
+                make.width.equalTo(370)
+                make.height.equalTo(120)
+            }
+            $0.isUserInteractionEnabled = true
+        }
+        
+        inputField.then {
+            inputItem.addSubview($0)
+            $0.backgroundColor = .clear
+            $0.snp.makeConstraints { make in
+                make.top.equalTo(inputItem.snp.top).offset(10)
+                make.leading.equalTo(inputItem.snp.leading).offset(10)
+                make.trailing.equalTo(inputItem.snp.trailing).offset(-10)
+                make.bottom.equalTo(inputItem.snp.bottom).offset(-10)
+            }
+            $0.isUserInteractionEnabled = true
+            $0.delegate = self
+        }
+        
+        backButton.then {
+            view.addSubview($0)
+            $0.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(20)
+                make.trailing.equalToSuperview().offset(-215)
+                make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
+                make.height.equalTo(70)
+            }
+        }
+        
+        completeButton.then {
+            view.addSubview($0)
+            $0.contentMode = .scaleAspectFit
+            $0.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(215)
+                make.trailing.equalToSuperview().offset(-20)
+                make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
+                make.height.equalTo(70)
+            }
+        }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
+        do {
+            realm = try Realm()
+            loadData()
+        } catch {
+            print("Realm 초기화 실패: \(error)")
+        }
         
         setUI()
         setConstraint()
@@ -186,20 +225,37 @@ class AddActionItemController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func completeButtonTapped() {
-        // Check if both selectedCard and inputField have valid values
         guard let text = inputField.text, !text.isEmpty else {
             print("Text is missing")
             return
         }
-//        actionPostRequest(with: "\(selectedCard)", content: text)
-
+        //        actionPostRequest(with: "\(selectedCard)", content: text)
         
-        let mainVC = MainVC() // Create a new instance of MainVC
-        navigationController?.pushViewController(mainVC, animated: true) // Present MainVC
-
+        let mainVC = MainVC()
+        print("=> \(text)")
+        // Realm에 새로운 항목 추가
+        let newItem = CategoryItem()
+        newItem.categoryType = "categoryType"
+        newItem.content = text
+        newItem.categoryImageName = "category4"
+        
+        do {
+            try self.realm.write {
+                self.realm.add(newItem)
+            }
+            self.loadData()
+        } catch {
+            print("Realm 추가 실패: \(error)")
+        }
+        
+        navigationController?.pushViewController(mainVC, animated: true)
+    }
+    func loadData() {
+        actionItems = realm.objects(CategoryItem.self)
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
+        print("textfield tapped")
         if let text = textField.text, !text.isEmpty {
             completeButton.image = UIImage(named: "addaction_completebutton.png")
         } else {

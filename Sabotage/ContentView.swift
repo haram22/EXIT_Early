@@ -92,7 +92,6 @@ public struct MainVCRepresentable: UIViewControllerRepresentable {
 
     public func updateUIViewController(_ uiViewController: UITabBarController, context: Context) {
         uiViewController.selectedIndex = viewModel.selectedTab
-//        print("🚀=  tapbar = \(uiViewController.selectedIndex)")
     }
 
     public func makeCoordinator() -> Coordinator {
@@ -111,7 +110,8 @@ public struct MainVCRepresentable: UIViewControllerRepresentable {
                 parent.selectedTab = index
                 updateTabBarItems(tabBarController: tabBarController) // 탭이 선택될 때마다 이미지 업데이트
             }
-            print("🚀=  tapbar == \(parent.selectedTab)")
+            // 탭바가 사라지지 않도록 설정
+            viewController.hidesBottomBarWhenPushed = false
             return true
         }
 
@@ -121,7 +121,6 @@ public struct MainVCRepresentable: UIViewControllerRepresentable {
                     let imageName = index == parent.selectedTab ? "\(index)icon" : "\(index)logo"
                     viewController.tabBarItem.image = UIImage(named: imageName)?.withRenderingMode(.alwaysOriginal)
                 }
-                print("🚀=  tapbar == \(index)")
             }
         }
     }

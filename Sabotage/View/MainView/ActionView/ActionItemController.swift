@@ -35,14 +35,6 @@ class ActionItemController: UIViewController {
             view.addSubview(imageView)
         }
         
-        backButton.contentMode = .scaleAspectFit
-        backButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(backButton)
-        
-        nextButton.contentMode = .scaleAspectFit
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(nextButton)
-        
         for (index, imageView) in actionCardImageViews.enumerated() {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(actionCardTapped(_:)))
             imageView.isUserInteractionEnabled = true
@@ -102,8 +94,9 @@ class ActionItemController: UIViewController {
             view.addSubview($0)
             $0.snp.makeConstraints { make in
                 make.top.equalTo(view.snp.top).offset(110)
-                make.leading.equalToSuperview().offset(0)
-                make.width.equalTo(415)
+                make.leading.equalTo(0)
+                make.trailing.equalTo(-3)
+                make.width.equalTo(305)
                 make.height.equalTo(50)
             }
         }
@@ -125,11 +118,10 @@ class ActionItemController: UIViewController {
         for imageView in actionCardImageViews {
             NSLayoutConstraint.activate([
                 imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                imageView.widthAnchor.constraint(equalToConstant: 370),
-                imageView.heightAnchor.constraint(equalToConstant: 70),
+                imageView.widthAnchor.constraint(equalToConstant: 350),
+                imageView.heightAnchor.constraint(equalToConstant: 80),
             ])
             
-            // Set aspect ratio constraint
             let aspectConstraint = NSLayoutConstraint(item: imageView,
                                                       attribute: .height,
                                                       relatedBy: .equal,
@@ -140,25 +132,32 @@ class ActionItemController: UIViewController {
             aspectConstraint.isActive = true
             
             if let previous = previousCardImageView {
-                imageView.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 20).isActive = true
+                imageView.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
             } else {
                 imageView.topAnchor.constraint(equalTo: subtitle.bottomAnchor, constant: 25).isActive = true
             }
-            
             previousCardImageView = imageView
         }
-        NSLayoutConstraint.activate([
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            backButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            backButton.widthAnchor.constraint(equalToConstant: 180),
-            backButton.heightAnchor.constraint(equalToConstant: 80),
-            
-            // Next button constraints
-            nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            nextButton.widthAnchor.constraint(equalToConstant: 180),
-            nextButton.heightAnchor.constraint(equalToConstant: 80),
-        ])
+        backButton.then {
+            view.addSubview($0)
+            $0.contentMode = .scaleAspectFit
+            $0.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(20)
+                make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
+                make.width.equalTo(160)
+                make.height.equalTo(80)
+            }
+        }
+        nextButton.then {
+            view.addSubview($0)
+            $0.contentMode = .scaleAspectFit
+            $0.snp.makeConstraints { make in
+                make.trailing.equalToSuperview().offset(-20)
+                make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
+                make.width.equalTo(160)
+                make.height.equalTo(80)
+            }
+        }
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(nextButtonTapped))
         nextButton.isUserInteractionEnabled = true
         nextButton.addGestureRecognizer(tapGesture)
