@@ -87,6 +87,7 @@ class MainVC: UIViewController {
         actionTableView.backgroundColor = .white // 명확한 배경색 설정
         actionTableView.dataSource = self
         actionTableView.delegate = self
+        actionTableView.separatorStyle = .none
         view.addSubview(actionTableView)
         
         actionTableView.snp.makeConstraints {
@@ -159,7 +160,7 @@ class MainVC: UIViewController {
         
         today.text = "오늘 사용량"
         today.textAlignment = .center
-//        today.font = UIFon
+        //        today.font = UIFon
         today.textColor = .base200
         today.numberOfLines = 0 // 필요에 따라 텍스트가 여러 줄로 표시되도록 설정
         pieChartBG.addSubview(today)
@@ -361,6 +362,10 @@ class MainVC: UIViewController {
     }
 }
 
+
+
+// MARK: - extension
+
 extension MainVC: UITableViewDataSource, UITableViewDelegate {
     
     // 섹션 내 행의 개수 반환
@@ -375,13 +380,15 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
     
     // 각 행에 대한 셀 구성
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         if tableView == actionTableView {
             if indexPath.row == actionItems.count {
                 // 마지막 셀에 "추가" 버튼 표시
                 let cell = UITableViewCell(style: .default, reuseIdentifier: "AddCell")
                 let addButton = UIButton(type: .system)
-                addButton.setTitle("Add New Item", for: .normal)
+                addButton.setTitle("새로운 목표 만들기", for: .normal)
+                addButton.setTitleColor(.primary700
+                                        , for: .application)
                 addButton.addTarget(self, action: #selector(addNewItem), for: .touchUpInside)
                 addButton.frame = cell.contentView.bounds
                 addButton.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -401,7 +408,7 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
             cell.textLabel?.text = "Limit Item \(indexPath.row + 1)"
             return cell
         }
-
+        
         return UITableViewCell()
     }
     
@@ -409,9 +416,11 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == actionTableView {
             if indexPath.row < actionItems.count {
+                
                 print("Selected Action Item: \(actionItems[indexPath.row].content)")
             }
         } else if tableView == limitTableView {
+            
             print("Selected Limit Item: \(indexPath.row + 1)")
         }
         tableView.deselectRow(at: indexPath, animated: true)
@@ -433,12 +442,11 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    // 셀 높이 조절 (필요 시)
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100 // 셀의 높이를 100으로 설정
+        return 68
     }
     
-    // "Add New Item" 셀의 편집 스타일 비허용
+    // 목표 추가 셀의 편집 스타일 비허용
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         if tableView == actionTableView && indexPath.row < actionItems.count {
             return true
@@ -462,7 +470,7 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
         return false
     }
     
-    // "Add New Item" 버튼 동작
+    // "내용 추가하기" 버튼 동작
     @objc func addNewItem() {
         let alertController = UIAlertController(title: "새 항목 추가", message: nil, preferredStyle: .alert)
         

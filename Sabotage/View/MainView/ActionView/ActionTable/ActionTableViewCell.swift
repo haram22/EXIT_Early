@@ -109,8 +109,8 @@ class ActionTableViewCell: UITableViewCell {
 
     let cellBackgroundView: UIView = {
         let view = UIView()
-        view.backgroundColor = .gray
-        view.layer.cornerRadius = 20
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 16
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -130,46 +130,55 @@ class ActionTableViewCell: UITableViewCell {
         if let image = UIImage(named: categoryItem.categoryImageName) {
             categoryImage.image = image
         } else {
-            categoryImage.image = nil // 기본 이미지를 제공할 수도 있음
+            categoryImage.image = nil
         }
     }
     
     func setupCell() {
+        // 셀 배경 색상 설정
         contentView.backgroundColor = .base50
+
+        // 배경 뷰 설정
         contentView.addSubview(cellBackgroundView)
+        cellBackgroundView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(0)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().inset(10)
+            make.height.equalTo(68)
+        }
+
+        // 카테고리 타입 레이블 설정
+        categoryType = UILabel().then {
+            $0.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+            $0.textColor = .base700
+        }
         
-        categoryType = UILabel()
-        categoryType.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        categoryType.textColor = .black
-        contentView.addSubview(categoryType)
-        categoryType.translatesAutoresizingMaskIntoConstraints = false
-        
-        contentLabel = UILabel()
-        contentLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        contentLabel.textColor = .black
+        // 내용 레이블 설정
+        contentLabel = UILabel().then {
+            $0.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+            $0.textColor = .base600
+        }
         contentView.addSubview(contentLabel)
-        contentLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(15)
+            make.leading.equalToSuperview().offset(120)
+        }
         
-        categoryImage = UIImageView()
+        contentView.addSubview(categoryType)
+        categoryType.snp.makeConstraints { make in
+            make.top.equalTo(contentLabel.snp.bottom).offset(5)
+            make.leading.equalToSuperview().offset(120)
+        }
+        
+        // 카테고리 이미지 설정
+        categoryImage = UIImageView().then {
+            $0.contentMode = .scaleAspectFit
+        }
         contentView.addSubview(categoryImage)
-        categoryImage.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            cellBackgroundView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-            cellBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            cellBackgroundView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            cellBackgroundView.heightAnchor.constraint(equalToConstant: 100),
-            
-            contentLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
-            contentLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 120),
-            
-            categoryType.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 55),
-            categoryType.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 120),
-            
-            categoryImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 23),
-            categoryImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50),
-            categoryImage.widthAnchor.constraint(equalToConstant: 50),
-            categoryImage.heightAnchor.constraint(equalToConstant: 50)
-        ])
+        categoryImage.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(23)
+            make.leading.equalToSuperview().offset(50)
+            make.width.height.equalTo(50) // 너비 및 높이 50 설정
+        }
     }
 }

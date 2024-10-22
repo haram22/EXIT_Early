@@ -25,6 +25,7 @@
 		212FB0422B4890C1001611A8 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8132B3D75C400A8DC07 /* TotalActivityReport.swift */; };
 		213B347A2CC769A800D38F52 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213B34792CC769A800D38F52 /* MainTabBarView.swift */; };
 		213B347C2CC77CC500D38F52 /* MainCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213B347B2CC77CC500D38F52 /* MainCopy.swift */; };
+		213B347E2CC7A9B900D38F52 /* ActionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213B347D2CC7A9B900D38F52 /* ActionDetailView.swift */; };
 		214CC4812B3C4782003B74EB /* SabotageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214CC4802B3C4782003B74EB /* SabotageApp.swift */; };
 		214CC4832B3C4782003B74EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214CC4822B3C4782003B74EB /* ContentView.swift */; };
 		214CC4852B3C4784003B74EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214CC4842B3C4784003B74EB /* Assets.xcassets */; };
@@ -169,6 +170,7 @@
 		210B7B462B4018CF00D4105D /* ActionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionApi.swift; sourceTree = "<group>"; };
 		213B34792CC769A800D38F52 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		213B347B2CC77CC500D38F52 /* MainCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCopy.swift; sourceTree = "<group>"; };
+		213B347D2CC7A9B900D38F52 /* ActionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDetailView.swift; sourceTree = "<group>"; };
 		214CC47D2B3C4782003B74EB /* Sabotage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sabotage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		214CC4802B3C4782003B74EB /* SabotageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SabotageApp.swift; sourceTree = "<group>"; };
 		214CC4822B3C4782003B74EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -600,6 +602,7 @@
 				8852C06A2B3C4B2800219714 /* AddActionItemController.swift */,
 				88637AB62B3C70ED006F1FF6 /* SaveActionItemController.swift */,
 				210B7B392B400D6F00D4105D /* ActionModel.swift */,
+				213B347D2CC7A9B900D38F52 /* ActionDetailView.swift */,
 			);
 			path = ActionView;
 			sourceTree = "<group>";
@@ -896,6 +899,7 @@
 				8852C0612B3C4A7900219714 /* AnalysisVC.swift in Sources */,
 				2169E8282B3D78C100A8DC07 /* PermissionViewSU.swift in Sources */,
 				21A1DAD92CC75EA40050C6A3 /* ActionTableView_RAM.swift in Sources */,
+				213B347E2CC7A9B900D38F52 /* ActionDetailView.swift in Sources */,
 				88637AB72B3C70ED006F1FF6 /* SaveActionItemController.swift in Sources */,
 				2169E82D2B3D795200A8DC07 /* ScheduleVMSU.swift in Sources */,
 				2169E8302B3D79F400A8DC07 /* Bundle_Extension.swift in Sources */,
