@@ -60,6 +60,17 @@ import Then
 //        }
 //    }
 //    
+//    //    private func configureTableViewFooter() {
+//    //        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44))
+//    //
+//    //        actionButton.frame = CGRect(x: 16, y: 0, width: tableView.bounds.width - 32, height: 44)
+//    //        footerView.addSubview(actionButton)
+//    //
+//    //        tableView.tableFooterView = footerView
+//    //    }
+//    
+//    
+//    
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        
 //        tableView.register(ActionTableViewCell.self, forCellReuseIdentifier: "ActionButtonCell")
@@ -126,7 +137,7 @@ import Then
 //    func getCategoryTypeString(for category: Int) -> String {
 //        switch category {
 //        case 1:
-//            return "운동"
+//            return "운동ㅡ"
 //        case 2:
 //            return "셀프케어"
 //        case 3:

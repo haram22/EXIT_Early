@@ -9,8 +9,12 @@ import Foundation
 import UIKit
 import RealmSwift
 
-class DataMock: Object {
-    @objc dynamic var name: String = ""
-    @objc dynamic var age: Int = 0
-    @objc dynamic var part: String = ""
+import RealmSwift
+
+class CategoryItem: Object {
+    @Persisted var categoryType: String = ""
+    @Persisted var content: String = ""
+    @Persisted var categoryImageName: String = ""
+    
+    @Persisted(primaryKey: true) var id: ObjectId
 }

@@ -224,7 +224,7 @@
 //            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(30)
 //            make.height.equalTo(70)
 //        }
-
+//
 //        
 //    }
 //    
@@ -234,9 +234,9 @@
 //    //    }
 //    
 //    
-
+//
 //    }
-
+//
 //    // 앱 하루 총 사용 시간
 //    @objc func datePickerValueChanged() {
 //        let selectedDate = countDownDatePicker.date
@@ -366,7 +366,7 @@
 //    
 //    // "완료" 버튼 클릭 시
 //    @objc func completeButtonTapped() {
-
+//
 //        // Check if inputName meets the character limit
 //        
 //        //         if let text = inputName.text, !text.isEmpty, text.count <= 3 {
@@ -382,11 +382,11 @@
 //            delegate?.addNewLimitItem(text)
 ////            limitPostRequest(with: 0, title: "title", apps: ["a", "b"], timeBudget: 0)
 //            // Dismiss the LimitItemController
-
+//
 //        
 //        if let text = inputName.text, !text.isEmpty, text.count <= 10 {
 //            delegate?.addNewLimitItem(text)
-
+//
 //            navigationController?.popViewController(animated: true)
 //            
 //        } else {
@@ -407,7 +407,7 @@
 //        return true
 //    }
 //}
-
+//
 //extension LimitItemController {
 //    
 //    func setupTapGesture() {
