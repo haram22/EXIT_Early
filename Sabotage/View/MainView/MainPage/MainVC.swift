@@ -10,21 +10,14 @@ protocol LimitItemDelegate: AnyObject {
 
 class MainVC: UIViewController {
     var segmentedControl = UISegmentedControl()
-    
-    // MARK: - ".custom"으로 설정해야 이미지를 가진 버튼 만들기 가능
     var actionButton = UIButton(type: .custom)
     var limitButton = UIButton(type: .custom)
-    
     var addButton = UIButton(type: .system)
     var pieChartViewController: PieChart!
-    
     var limitTableView: UITableView!
     var actionTableView: UITableView!
-    
     var actionItems: Results<CategoryItem>! // Realm의 데이터 저장
-    
     var realm: Realm!
-    
     let logoImageView = UIImageView(image: UIImage(named: "main_logo.png"))
     let logoText = UIImageView(image: UIImage(named: "main_logoText.png"))
     let pieChartBG = UIImageView(image: UIImage(named: "main_pieChartBG.png"))
@@ -35,7 +28,6 @@ class MainVC: UIViewController {
     let limitTogglebuttonTapped = UIImageView(image: UIImage(named: "main_limitToggleButtonTapped.png"))
     
     var limitButtonVisible = false // limitbuttonTapped 이미지의 보이기 여부를 추적하는 변수
-    
     let leftButton = UIButton(type: .system)
     let rightButton = UIButton(type: .system)
     
@@ -64,7 +56,7 @@ class MainVC: UIViewController {
         // 이전 화면으로 돌아가는 "< Back" 버튼 숨기기
         navigationItem.hidesBackButton = true
         
-        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil) // title 부분 수정
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         backBarButtonItem.tintColor = .black
         self.navigationItem.backBarButtonItem = backBarButtonItem
         
@@ -74,7 +66,7 @@ class MainVC: UIViewController {
         actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         actionButton.isHidden = false
-        
+    
         // 데이터 로드
         loadData()
     }
@@ -84,7 +76,7 @@ class MainVC: UIViewController {
         // actionTableView 설정
         actionTableView = UITableView(frame: .zero, style: .plain)
         actionTableView.register(ActionTableViewCell.self, forCellReuseIdentifier: "ActionCustomCell")
-        actionTableView.backgroundColor = .white // 명확한 배경색 설정
+        actionTableView.backgroundColor = .base50
         actionTableView.dataSource = self
         actionTableView.delegate = self
         actionTableView.separatorStyle = .none
@@ -99,7 +91,7 @@ class MainVC: UIViewController {
         // limitTableView 설정
         limitTableView = UITableView(frame: .zero, style: .plain)
         limitTableView.register(UITableViewCell.self, forCellReuseIdentifier: "LimitCustomCell")
-        limitTableView.backgroundColor = .white // 명확한 배경색 설정
+        limitTableView.backgroundColor = .base50
         limitTableView.dataSource = self
         limitTableView.delegate = self
         view.addSubview(limitTableView)
@@ -149,23 +141,22 @@ class MainVC: UIViewController {
     
     func pieChartViewUI() {
         let scheduleVM = ScheduleVM()
-        logoImageView.contentMode = .scaleAspectFit // 로고 이미지의 크기를 유지하면서 비율을 맞춤
+        logoImageView.contentMode = .scaleAspectFit
         view.addSubview(logoImageView)
         
-        logoText.contentMode = .scaleAspectFit // 로고 이미지의 크기를 유지하면서 비율을 맞춤
+        logoText.contentMode = .scaleAspectFit
         view.addSubview(logoText)
-        
-        pieChartBG.contentMode = .scaleAspectFit // 이미지의 크기를 유지하면서 비율을 맞춤
+        // 이미지의 크기를 유지하면서 비율을 맞춤
         view.addSubview(pieChartBG)
         
         today.text = "오늘 사용량"
         today.textAlignment = .center
         //        today.font = UIFon
         today.textColor = .base200
-        today.numberOfLines = 0 // 필요에 따라 텍스트가 여러 줄로 표시되도록 설정
+        today.numberOfLines = 0
         pieChartBG.addSubview(today)
         
-        forMoreAnalysis.contentMode = .scaleAspectFit // 이미지의 크기를 유지하면서 비율을 맞춤
+        forMoreAnalysis.contentMode = .scaleAspectFit
         view.addSubview(forMoreAnalysis)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(forMoreAnalysisTapped))
@@ -178,49 +169,50 @@ class MainVC: UIViewController {
     func pieChartConstraintUI() {
         logoImageView.then {
             $0.snp.makeConstraints {
-                $0.top.equalTo(view.safeAreaLayoutGuide).offset(20.95) // 상단 여백
-                $0.leading.equalToSuperview().offset(25.15) // 좌측 여백
-                $0.width.equalTo(39.304) // 가로 크기
-                $0.height.equalTo(39.6) // 세로 크기
+                $0.top.equalTo(view.safeAreaLayoutGuide).offset(20.95)
+                $0.leading.equalToSuperview().offset(25.15)
+                $0.width.equalTo(39.304)
+                $0.height.equalTo(39.6)
             }
         }
         
         logoText.then {
             $0.snp.makeConstraints {
-                $0.top.equalTo(view.safeAreaLayoutGuide).offset(31) // 상단 여백
-                $0.leading.equalTo(logoImageView.snp.trailing).offset(45) // 좌측 여백
-                $0.width.equalTo(63) // 가로 크기
-                $0.height.equalTo(20) // 세로 크기
+                $0.top.equalTo(view.safeAreaLayoutGuide).offset(31)
+                $0.leading.equalTo(logoImageView.snp.trailing).offset(45)
+                $0.width.equalTo(63)
+                $0.height.equalTo(20)
             }
         }
         
         pieChartBG.then {
             $0.snp.makeConstraints {
-                $0.top.equalTo(logoImageView.snp.bottom).offset(16) // 상단 여백
-                $0.leading.equalToSuperview().offset(10) // 좌측 여백
-                $0.trailing.equalToSuperview().offset(-10) // 우측 여백
-                $0.width.equalTo(400) // 가로 크기
-                $0.height.equalTo(300) // 세로 크기
+                $0.top.equalTo(logoImageView.snp.bottom).offset(16)
+                $0.leading.equalToSuperview().offset(10)
+                $0.trailing.equalToSuperview().offset(-10)
+                $0.width.equalTo(400)
+                $0.height.equalTo(300)
             }
         }
-        
+
         today.then {
             $0.snp.makeConstraints {
-                $0.top.equalTo(pieChartBG.snp.top).offset(34) // 상단 여백
-                $0.trailing.equalTo(pieChartBG.snp.leading).offset(140) // 우측 여백
-                $0.width.equalTo(74) // 가로 크기
-                $0.height.equalTo(22) // 세로 크기
+                $0.top.equalTo(pieChartBG.snp.top).offset(34)
+                $0.trailing.equalTo(pieChartBG.snp.leading).offset(140)
+                $0.width.equalTo(74)
+                $0.height.equalTo(22)
             }
         }
-        
+
         forMoreAnalysis.then {
             $0.snp.makeConstraints {
-                $0.top.equalTo(view.safeAreaLayoutGuide).offset(290) // 상단 여백
-                $0.centerX.equalToSuperview() // 중앙 정렬
-                $0.width.equalTo(80) // 가로 크기
-                $0.height.equalTo(30) // 세로 크기
+                $0.top.equalTo(view.safeAreaLayoutGuide).offset(290)
+                $0.centerX.equalToSuperview()
+                $0.width.equalTo(80)
+                $0.height.equalTo(30)
             }
         }
+
     }
     
     func toggleUI() {
@@ -320,11 +312,6 @@ class MainVC: UIViewController {
         navigationController?.pushViewController(analysisVC, animated: true)
     }
     
-    private func configureTableView(_ tableView: UITableView, cellClass: UITableViewCell.Type, identifier: String) {
-        // 이 함수는 중복된 설정을 피하기 위해 제거합니다.
-        // setupTableViews()에서 모든 설정을 완료했기 때문에 이 함수는 필요 없습니다.
-    }
-    
     func loadData() {
         actionItems = realm.objects(CategoryItem.self)
         actionTableView.reloadData()
@@ -351,7 +338,6 @@ class MainVC: UIViewController {
             alertController.addAction(okAction)
             present(alertController, animated: true, completion: nil)
         } else {
-            // 5개 이하일 경우, 새로운 아이템을 추가합니다.
             let actionItemController = ActionItemController() // 원하는 ActionItemController로 이동
             navigationController?.pushViewController(actionItemController, animated: true)
         }
@@ -368,6 +354,7 @@ class MainVC: UIViewController {
 
 extension MainVC: UITableViewDataSource, UITableViewDelegate {
     
+    
     // 섹션 내 행의 개수 반환
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == actionTableView {
@@ -380,19 +367,37 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
     
     // 각 행에 대한 셀 구성
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if tableView == actionTableView {
             if indexPath.row == actionItems.count {
                 // 마지막 셀에 "추가" 버튼 표시
                 let cell = UITableViewCell(style: .default, reuseIdentifier: "AddCell")
                 let addButton = UIButton(type: .system)
+                cell.backgroundColor = .base50
+                cell.contentView.backgroundColor = .base50
                 addButton.setTitle("새로운 목표 만들기", for: .normal)
                 addButton.setTitleColor(.primary700
-                                        , for: .application)
+                                        , for: .normal)
+                addButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
                 addButton.addTarget(self, action: #selector(addNewItem), for: .touchUpInside)
+                if let plusImage = UIImage(named: "plus_icon") {
+                    addButton.setImage(plusImage, for: .normal)
+                    addButton.tintColor = .primary700
+                    
+                }
+                
+                addButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
+                addButton.layer.cornerRadius = 16 // 반경 설정
+                        addButton.clipsToBounds = true
+                addButton.contentHorizontalAlignment = .center
+                addButton.backgroundColor = .white
                 addButton.frame = cell.contentView.bounds
                 addButton.autoresizingMask = [.flexibleWidth, .flexibleHeight]
                 cell.contentView.addSubview(addButton)
+                addButton.snp.makeConstraints { make in
+                    make.center.equalToSuperview()
+                    make.width.equalToSuperview()
+                    make.height.equalTo(75)
+                }
                 return cell
             } else {
                 // 일반 셀
@@ -405,10 +410,9 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
             }
         } else if tableView == limitTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LimitCustomCell", for: indexPath)
-            cell.textLabel?.text = "Limit Item \(indexPath.row + 1)"
+            cell.textLabel?.text = "Limit Itefm \(indexPath.row + 1)"
             return cell
         }
-        
         return UITableViewCell()
     }
     
@@ -443,7 +447,7 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 68
+        return 87
     }
     
     // 목표 추가 셀의 편집 스타일 비허용

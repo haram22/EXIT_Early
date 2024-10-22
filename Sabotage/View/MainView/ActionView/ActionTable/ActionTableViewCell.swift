@@ -142,9 +142,9 @@ class ActionTableViewCell: UITableViewCell {
         contentView.addSubview(cellBackgroundView)
         cellBackgroundView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(0)
-            make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().inset(10)
-            make.height.equalTo(68)
+            make.leading.equalToSuperview().offset(0)
+            make.trailing.equalToSuperview().offset(0)
+            make.height.equalTo(75)
         }
 
         // 카테고리 타입 레이블 설정
