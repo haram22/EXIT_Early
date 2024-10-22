@@ -476,53 +476,55 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
     
     // "내용 추가하기" 버튼 동작
     @objc func addNewItem() {
-        let alertController = UIAlertController(title: "새 항목 추가", message: nil, preferredStyle: .alert)
-        
-        alertController.addTextField { textField in
-            textField.placeholder = "카테고리 타입 입력"
-        }
-        
-        alertController.addTextField { textField in
-            textField.placeholder = "내용 입력"
-        }
-        
-        alertController.addTextField { textField in
-            textField.placeholder = "이미지 이름 입력"
-        }
-        
-        let addAction = UIAlertAction(title: "추가", style: .default) { _ in
-            guard
-                let categoryType = alertController.textFields?[0].text, !categoryType.isEmpty,
-                let content = alertController.textFields?[1].text, !content.isEmpty,
-                let categoryImageName = alertController.textFields?[2].text, !categoryImageName.isEmpty
-            else {
-                self.presentAlert(title: "입력 오류", message: "모든 필드를 입력해야 합니다.")
-                return
-            }
-            
-            // Realm에 새로운 항목 추가
-            let newItem = CategoryItem()
-            newItem.categoryType = categoryType
-            newItem.content = content
-            newItem.categoryImageName = categoryImageName
-            
-            do {
-                try self.realm.write {
-                    self.realm.add(newItem)
-                }
-                self.loadData()
-            } catch {
-                self.presentAlert(title: "추가 실패", message: "새 항목을 추가하는데 실패했습니다.")
-                print("Realm 추가 실패: \(error)")
-            }
-        }
-        
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
-        
-        alertController.addAction(addAction)
-        alertController.addAction(cancelAction)
-        
-        present(alertController, animated: true, completion: nil)
+        let addItemVC = ActionItemController()
+        navigationController?.pushViewController(addItemVC, animated: true)
+//        let alertController = UIAlertController(title: "새 항목 추가", message: nil, preferredStyle: .alert)
+//        
+//        alertController.addTextField { textField in
+//            textField.placeholder = "카테고리 타입 입력"
+//        }
+//        
+//        alertController.addTextField { textField in
+//            textField.placeholder = "내용 입력"
+//        }
+//        
+//        alertController.addTextField { textField in
+//            textField.placeholder = "이미지 이름 입력"
+//        }
+//        
+//        let addAction = UIAlertAction(title: "추가", style: .default) { _ in
+//            guard
+//                let categoryType = alertController.textFields?[0].text, !categoryType.isEmpty,
+//                let content = alertController.textFields?[1].text, !content.isEmpty,
+//                let categoryImageName = alertController.textFields?[2].text, !categoryImageName.isEmpty
+//            else {
+//                self.presentAlert(title: "입력 오류", message: "모든 필드를 입력해야 합니다.")
+//                return
+//            }
+//            
+//            // Realm에 새로운 항목 추가
+//            let newItem = CategoryItem()
+//            newItem.categoryType = categoryType
+//            newItem.content = content
+//            newItem.categoryImageName = categoryImageName
+//            
+//            do {
+//                try self.realm.write {
+//                    self.realm.add(newItem)
+//                }
+//                self.loadData()
+//            } catch {
+//                self.presentAlert(title: "추가 실패", message: "새 항목을 추가하는데 실패했습니다.")
+//                print("Realm 추가 실패: \(error)")
+//            }
+//        }
+//        
+//        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+//        
+//        alertController.addAction(addAction)
+//        alertController.addAction(cancelAction)
+//        
+//        present(alertController, animated: true, completion: nil)
     }
     
     // 간단한 알림창 함수
