@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import RealmSwift
 
-class Data: Object {
+class DataMock: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var age: Int = 0
     @objc dynamic var part: String = ""

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ActionDummyDataType: Codable {
+struct ActionDataType: Codable {
     let id: Int
     let category: String
     let content: String

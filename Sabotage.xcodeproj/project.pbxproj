@@ -23,6 +23,10 @@
 		212FB03D2B487A3E001611A8 /* ActionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B462B4018CF00D4105D /* ActionApi.swift */; };
 		212FB0402B489041001611A8 /* ScreenTimeReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8112B3D75C400A8DC07 /* ScreenTimeReport.swift */; };
 		212FB0422B4890C1001611A8 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8132B3D75C400A8DC07 /* TotalActivityReport.swift */; };
+		213B34752CC7665400D38F52 /* ActionModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213B34742CC7665400D38F52 /* ActionModelData.swift */; };
+		213B34782CC766D600D38F52 /* ActionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213B34772CC766D600D38F52 /* ActionTableView.swift */; };
+		213B347A2CC769A800D38F52 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213B34792CC769A800D38F52 /* MainTabBarView.swift */; };
+		213B347C2CC77CC500D38F52 /* MainCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213B347B2CC77CC500D38F52 /* MainCopy.swift */; };
 		214CC4812B3C4782003B74EB /* SabotageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214CC4802B3C4782003B74EB /* SabotageApp.swift */; };
 		214CC4832B3C4782003B74EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214CC4822B3C4782003B74EB /* ContentView.swift */; };
 		214CC4852B3C4784003B74EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214CC4842B3C4784003B74EB /* Assets.xcassets */; };
@@ -165,6 +169,10 @@
 		210B7B3F2B400DD600D4105D /* LimitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitModel.swift; sourceTree = "<group>"; };
 		210B7B412B400E4000D4105D /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
 		210B7B462B4018CF00D4105D /* ActionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionApi.swift; sourceTree = "<group>"; };
+		213B34742CC7665400D38F52 /* ActionModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionModelData.swift; sourceTree = "<group>"; };
+		213B34772CC766D600D38F52 /* ActionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTableView.swift; sourceTree = "<group>"; };
+		213B34792CC769A800D38F52 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
+		213B347B2CC77CC500D38F52 /* MainCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCopy.swift; sourceTree = "<group>"; };
 		214CC47D2B3C4782003B74EB /* Sabotage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sabotage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		214CC4802B3C4782003B74EB /* SabotageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SabotageApp.swift; sourceTree = "<group>"; };
 		214CC4822B3C4782003B74EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -299,6 +307,7 @@
 		210B7B2C2B3FF30400D4105D /* ActionTable */ = {
 			isa = PBXGroup;
 			children = (
+				210B7B412B400E4000D4105D /* MainTableView.swift */,
 				210B7B372B400D5100D4105D /* ActionTableViewCell.swift */,
 			);
 			path = ActionTable;
@@ -313,6 +322,15 @@
 				2184A6F42B46832600008073 /* BannerAPI.swift */,
 			);
 			path = ServerAPI;
+			sourceTree = "<group>";
+		};
+		213B34762CC766C500D38F52 /* ram_test */ = {
+			isa = PBXGroup;
+			children = (
+				213B34742CC7665400D38F52 /* ActionModelData.swift */,
+				213B34772CC766D600D38F52 /* ActionTableView.swift */,
+			);
+			path = ram_test;
 			sourceTree = "<group>";
 		};
 		214CC4742B3C4782003B74EB = {
@@ -496,6 +514,7 @@
 		21A1DAE32CC761540050C6A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8852C05A2B3C484500219714 /* Profile */,
 				8852C05E2B3C493700219714 /* Analysis */,
 				8852C0622B3C4A9800219714 /* MainView */,
 			);
@@ -568,7 +587,6 @@
 		8852C0622B3C4A9800219714 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				8852C05A2B3C484500219714 /* Profile */,
 				8852C0632B3C4AA200219714 /* MainPage */,
 				8852C0662B3C4ABF00219714 /* ActionView */,
 				8852C0672B3C4ADC00219714 /* LimitView */,
@@ -579,9 +597,10 @@
 		8852C0632B3C4AA200219714 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
-				210B7B412B400E4000D4105D /* MainTableView.swift */,
 				88ABDAB12B3EA3BD0011682E /* PieChart.swift */,
 				8852C0642B3C4AB300219714 /* MainVC.swift */,
+				213B34792CC769A800D38F52 /* MainTabBarView.swift */,
+				213B347B2CC77CC500D38F52 /* MainCopy.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -589,6 +608,7 @@
 		8852C0662B3C4ABF00219714 /* ActionView */ = {
 			isa = PBXGroup;
 			children = (
+				213B34762CC766C500D38F52 /* ram_test */,
 				210B7B2C2B3FF30400D4105D /* ActionTable */,
 				8852C0682B3C4B1300219714 /* ActionItemController.swift */,
 				8852C06A2B3C4B2800219714 /* AddActionItemController.swift */,
@@ -882,10 +902,12 @@
 				8852C0692B3C4B1300219714 /* ActionItemController.swift in Sources */,
 				8800F0A72B421A25005CB6D2 /* FontSystem.swift in Sources */,
 				2169E8222B3D778600A8DC07 /* FamilyControlManager.swift in Sources */,
+				213B34752CC7665400D38F52 /* ActionModelData.swift in Sources */,
 				210B7B3A2B400D6F00D4105D /* ActionModel.swift in Sources */,
 				210B7B382B400D5100D4105D /* ActionTableViewCell.swift in Sources */,
 				21741A122B416FCE0062B0D7 /* TotalActivityView.swift in Sources */,
 				21750E062B4159BA004E9A04 /* LimitViewSU.swift in Sources */,
+				213B347C2CC77CC500D38F52 /* MainCopy.swift in Sources */,
 				8852C0612B3C4A7900219714 /* AnalysisVC.swift in Sources */,
 				2169E8282B3D78C100A8DC07 /* PermissionViewSU.swift in Sources */,
 				21A1DAD92CC75EA40050C6A3 /* Realm.swift in Sources */,
@@ -894,6 +916,7 @@
 				2169E8302B3D79F400A8DC07 /* Bundle_Extension.swift in Sources */,
 				210B7B322B3FFF1800D4105D /* (null) in Sources */,
 				8852C0652B3C4AB300219714 /* MainVC.swift in Sources */,
+				213B347A2CC769A800D38F52 /* MainTabBarView.swift in Sources */,
 				2167F4D02B44B7040025F842 /* notiTest.swift in Sources */,
 				2169E8392B3DD42C00A8DC07 /* AppStorageManager.swift in Sources */,
 				21741A0B2B416A250062B0D7 /* DeviceActivityMonitorExtension.swift in Sources */,
@@ -908,6 +931,7 @@
 				8852C06D2B3C4B5C00219714 /* LimitItemVC.swift in Sources */,
 				2169E82B2B3D793800A8DC07 /* PermissionVMSU.swift in Sources */,
 				2184A6F52B46832600008073 /* BannerAPI.swift in Sources */,
+				213B34782CC766D600D38F52 /* ActionTableView.swift in Sources */,
 				21741A132B416FD40062B0D7 /* ScreenTimeActivityReport.swift in Sources */,
 				210B7B402B400DD600D4105D /* LimitModel.swift in Sources */,
 				210B7B222B3FEA6600D4105D /* (null) in Sources */,
@@ -1474,8 +1498,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
-				kind = exactVersion;
-				version = 10.33.0;
+				kind = upToNextMinorVersion;
+				minimumVersion = 10.33.0;
 			};
 		};
 		21D9F43C2CAFB44800234F04 /* XCRemoteSwiftPackageReference "SnapKit" */ = {

@@ -91,7 +91,6 @@ class ActionItemController: UIViewController {
     func setConstraint() {
         NSLayoutConstraint.activate([
             
-            
             closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             closeButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             closeButton.widthAnchor.constraint(equalToConstant: 40),

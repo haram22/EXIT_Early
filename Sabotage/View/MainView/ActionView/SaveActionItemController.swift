@@ -30,7 +30,7 @@ class SaveActionItemController: UIViewController, UITextFieldDelegate {
     var text = ""
     
     
-    var selectedActionItem: ActionDummyDataType?
+    var selectedActionItem: ActionDataType?
     
     // MARK: 변수
     //    let backButton = UIButton(type: .system)
