@@ -78,7 +78,7 @@ class ProfileVC: UIViewController {
         
         let headerlabel = UILabel()
 //        headerlabel.text = "즐거운스누피1441"
-        headerlabel.text = nickname
+        headerlabel.text = "test"
         headerlabel.textColor = .black
         headerlabel.textAlignment = .center
         headerlabel.font = UIFont.Headline()

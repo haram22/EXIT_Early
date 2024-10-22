@@ -74,7 +74,7 @@ extension ScheduleView {
                 
                 //                $scheduleVM.isSaveAlertActive
                 scheduleVM.saveSchedule(selectedApps: tempSelection)
-                goalPostRequest(title: groupName, timeBudget: finalTotal, nudgeInterval: nudgeTotal)
+//                goalPostRequest(title: groupName, timeBudget: finalTotal, nudgeInterval: nudgeTotal)
             }) {
                 Text(BUTTON_LABEL).foregroundColor(isInputValid ? Color.primary700 : Color.base200).font(.headline)
             }
@@ -358,7 +358,7 @@ extension ScheduleView {
             print("selectedNudge = \(selectedNudgeHours):\(selectedNudgeMinutes)")
             print("selectedGoalHours = \(selectedGoalHours):\(selectedGoalMinutes)")
             
-            goalPostRequest(title: groupName, timeBudget: finalTotal, nudgeInterval: nudgeTotal)
+//            goalPostRequest(title: groupName, timeBudget: finalTotal, nudgeInterval: nudgeTotal)
             
             NavigationView {
                 NavigationLink(destination: MainVCWrapper()) {

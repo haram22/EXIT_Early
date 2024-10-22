@@ -191,7 +191,7 @@ class AddActionItemController: UIViewController, UITextFieldDelegate {
             print("Text is missing")
             return
         }
-        actionPostRequest(with: "\(selectedCard)", content: text)
+//        actionPostRequest(with: "\(selectedCard)", content: text)
 
         
         let mainVC = MainVC() // Create a new instance of MainVC

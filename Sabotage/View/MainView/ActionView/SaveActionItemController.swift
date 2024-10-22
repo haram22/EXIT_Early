@@ -237,7 +237,7 @@ class SaveActionItemController: UIViewController, UITextFieldDelegate {
             guard let myID = selectedActionItem?.id else {
                 return
             }
-            deleteRequest(id: myID)
+//            deleteRequest(id: myID)
             print("✋ myID = ", myID)            
             self.navigationController?.popToRootViewController(animated: true)
         }
@@ -270,7 +270,7 @@ class SaveActionItemController: UIViewController, UITextFieldDelegate {
         print("⚠️ selectedActionItem?.category: ", selectedActionItem?.category as Any)
         print("⚠️ selectedActionItem?.id: ", selectedActionItem?.id as Any)
         print("🔥 category = ", category, ", content = ", newContent, ", id = ", myID)
-        actionPatchRequest(category: category, content: newContent, id: myID)
+//        actionPatchRequest(category: category, content: newContent, id: myID)
         print("🔥 category = ", category, ", content = ", newContent, ", id = ", myID)
         navigationController?.popToRootViewController(animated: true)
     }

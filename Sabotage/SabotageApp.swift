@@ -17,7 +17,7 @@ struct ScreenTime_SabotageApp: App {
     init() {
         handleRequestAuthorization()
         requestNotificationPermission()
-        initUUID()
+//        initUUID()
     }
     var body: some Scene {
         WindowGroup {

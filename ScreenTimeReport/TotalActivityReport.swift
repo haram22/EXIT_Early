@@ -121,7 +121,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                     }
                     func scheduleNotification_each0(appName: String) {
                         if notificationSentForApps["\(appName)1"] != true {
-                            EjectionPostRequest()
+//                            EjectionPostRequest()
                             let content = UNMutableNotificationContent()
                             content.title = "탈출 1분 전!"
                             //                        content.body = "You have used \(appName) for 10 minutes."
@@ -139,7 +139,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                     
                     func scheduleNotification_each1(appName: String) {
                         if notificationSentForApps["\(appName)2"] != true {
-                            EjectionPostRequest()
+//                            EjectionPostRequest()
                             let content = UNMutableNotificationContent()
                             DispatchQueue.main.async {
                                         // Main thread에서 UI 업데이트
@@ -160,7 +160,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                     }
                     func scheduleNotification_each2(appName: String) {
                         if notificationSentForApps["\(appName)3"] != true {
-                            EjectionPostRequest()
+//                            EjectionPostRequest()
                             let content = UNMutableNotificationContent()
                             content.title = "이미 1분이 지났네요.."
                             content.body = "비록 약속을 지키지 못했지만, 아직 늦지 않았어요. 지금 바로 ‘1시 전에 취침', 시작하면 어떨까요?"

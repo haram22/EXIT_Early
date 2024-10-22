@@ -17,10 +17,8 @@
 		210B7B3E2B400DB900D4105D /* LimitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B3D2B400DB900D4105D /* LimitTableViewCell.swift */; };
 		210B7B402B400DD600D4105D /* LimitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B3F2B400DD600D4105D /* LimitModel.swift */; };
 		210B7B422B400E4000D4105D /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B412B400E4000D4105D /* MainTableView.swift */; };
-		210B7B452B40176900D4105D /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B442B40176900D4105D /* APICaller.swift */; };
 		210B7B472B4018CF00D4105D /* ActionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B462B4018CF00D4105D /* ActionApi.swift */; };
 		212FB03A2B487A05001611A8 /* BannerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2184A6F42B46832600008073 /* BannerAPI.swift */; };
-		212FB03B2B487A22001611A8 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B442B40176900D4105D /* APICaller.swift */; };
 		212FB03C2B487A2D001611A8 /* LimitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B3F2B400DD600D4105D /* LimitModel.swift */; };
 		212FB03D2B487A3E001611A8 /* ActionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B7B462B4018CF00D4105D /* ActionApi.swift */; };
 		212FB0402B489041001611A8 /* ScreenTimeReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8112B3D75C400A8DC07 /* ScreenTimeReport.swift */; };
@@ -74,10 +72,13 @@
 		2184A46F2B48B31200694F0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214CC4842B3C4784003B74EB /* Assets.xcassets */; };
 		2184A4712B48B74900694F0F /* bannerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2184A4702B48B74900694F0F /* bannerTest.swift */; };
 		2184A6F52B46832600008073 /* BannerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2184A6F42B46832600008073 /* BannerAPI.swift */; };
+		21A1DAD92CC75EA40050C6A3 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A1DAD82CC75EA40050C6A3 /* Realm.swift */; };
+		21A1DADC2CC75EE90050C6A3 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 21A1DADB2CC75EE90050C6A3 /* Realm */; };
+		21A1DADE2CC75EE90050C6A3 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 21A1DADD2CC75EE90050C6A3 /* RealmSwift */; };
+		21A1DAE02CC75F200050C6A3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A1DADF2CC75F200050C6A3 /* Data.swift */; };
 		21D9F43E2CAFB44800234F04 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21D9F43D2CAFB44800234F04 /* SnapKit */; };
 		21E458782B41984300AFC7F4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21E458772B41984300AFC7F4 /* Colors.xcassets */; };
 		21E4587C2B41F22D00AFC7F4 /* DeviceID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4587B2B41F22D00AFC7F4 /* DeviceID.swift */; };
-		21E4587F2B42007800AFC7F4 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4587E2B42007800AFC7F4 /* Buttons.swift */; };
 		2D1BD4CD2B42A20C00EE8374 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1BD4CC2B42A20C00EE8374 /* ProfileModel.swift */; };
 		2D1BD4D12B42A28F00EE8374 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1BD4D02B42A28F00EE8374 /* ProfileTableViewCell.swift */; };
 		2D6DF9332B45260A00CD0248 /* BeforeAnalysisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6DF9322B45260A00CD0248 /* BeforeAnalysisVC.swift */; };
@@ -163,7 +164,6 @@
 		210B7B3D2B400DB900D4105D /* LimitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitTableViewCell.swift; sourceTree = "<group>"; };
 		210B7B3F2B400DD600D4105D /* LimitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitModel.swift; sourceTree = "<group>"; };
 		210B7B412B400E4000D4105D /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
-		210B7B442B40176900D4105D /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		210B7B462B4018CF00D4105D /* ActionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionApi.swift; sourceTree = "<group>"; };
 		214CC47D2B3C4782003B74EB /* Sabotage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sabotage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		214CC4802B3C4782003B74EB /* SabotageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SabotageApp.swift; sourceTree = "<group>"; };
@@ -210,9 +210,10 @@
 		21750E052B4159BA004E9A04 /* LimitViewSU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitViewSU.swift; sourceTree = "<group>"; };
 		2184A4702B48B74900694F0F /* bannerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerTest.swift; sourceTree = "<group>"; };
 		2184A6F42B46832600008073 /* BannerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAPI.swift; sourceTree = "<group>"; };
+		21A1DAD82CC75EA40050C6A3 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
+		21A1DADF2CC75F200050C6A3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		21E458772B41984300AFC7F4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		21E4587B2B41F22D00AFC7F4 /* DeviceID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceID.swift; sourceTree = "<group>"; };
-		21E4587E2B42007800AFC7F4 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		2D1BD4CC2B42A20C00EE8374 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		2D1BD4D02B42A28F00EE8374 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		2D6DF9322B45260A00CD0248 /* BeforeAnalysisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeAnalysisVC.swift; sourceTree = "<group>"; };
@@ -246,6 +247,8 @@
 			files = (
 				216C9DFE2CAFBE44009AEB32 /* Then in Frameworks */,
 				21D9F43E2CAFB44800234F04 /* SnapKit in Frameworks */,
+				21A1DADC2CC75EE90050C6A3 /* Realm in Frameworks */,
+				21A1DADE2CC75EE90050C6A3 /* RealmSwift in Frameworks */,
 				540A4916CFF826B627CECDD2 /* Pods_Sabotage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,7 +307,6 @@
 		210B7B432B40175D00D4105D /* ServerAPI */ = {
 			isa = PBXGroup;
 			children = (
-				210B7B442B40176900D4105D /* APICaller.swift */,
 				215C7D7F2B45254800D217DA /* GoalGroupApi.swift */,
 				210B7B462B4018CF00D4105D /* ActionApi.swift */,
 				21E4587B2B41F22D00AFC7F4 /* DeviceID.swift */,
@@ -345,18 +347,16 @@
 		214CC47F2B3C4782003B74EB /* Sabotage */ = {
 			isa = PBXGroup;
 			children = (
-				2167F4CE2B44B6FB0025F842 /* notificationTest */,
-				21E4587D2B42006800AFC7F4 /* Common */,
 				8800F0A52B421A0C005CB6D2 /* Design System */,
-				21741A1C2B417CE50062B0D7 /* monitor */,
 				210B7B432B40175D00D4105D /* ServerAPI */,
+				21A1DAD72CC75E850050C6A3 /* Realm */,
+				2167F4CE2B44B6FB0025F842 /* notificationTest */,
+				21A1DAE32CC761540050C6A3 /* View */,
+				21741A1C2B417CE50062B0D7 /* monitor */,
 				2169E8332B3D958F00A8DC07 /* Info.plist */,
 				2169E82E2B3D79E100A8DC07 /* Extension */,
 				2169E8202B3D773200A8DC07 /* Access */,
 				2169E7D22B3D74D300A8DC07 /* Sabotage.entitlements */,
-				8852C0622B3C4A9800219714 /* Main */,
-				8852C05E2B3C493700219714 /* Analysis */,
-				8852C05A2B3C484500219714 /* Profile */,
 				214CC4802B3C4782003B74EB /* SabotageApp.swift */,
 				214CC4822B3C4782003B74EB /* ContentView.swift */,
 				21E458772B41984300AFC7F4 /* Colors.xcassets */,
@@ -484,12 +484,22 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		21E4587D2B42006800AFC7F4 /* Common */ = {
+		21A1DAD72CC75E850050C6A3 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
-				21E4587E2B42007800AFC7F4 /* Buttons.swift */,
+				21A1DAD82CC75EA40050C6A3 /* Realm.swift */,
+				21A1DADF2CC75F200050C6A3 /* Data.swift */,
 			);
-			path = Common;
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		21A1DAE32CC761540050C6A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8852C05E2B3C493700219714 /* Analysis */,
+				8852C0622B3C4A9800219714 /* MainView */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		2D1BD4CF2B42A27C00EE8374 /* ProfileTable */ = {
@@ -555,22 +565,23 @@
 			path = AnalysisView;
 			sourceTree = "<group>";
 		};
-		8852C0622B3C4A9800219714 /* Main */ = {
+		8852C0622B3C4A9800219714 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				8852C05A2B3C484500219714 /* Profile */,
 				8852C0632B3C4AA200219714 /* MainPage */,
 				8852C0662B3C4ABF00219714 /* ActionView */,
 				8852C0672B3C4ADC00219714 /* LimitView */,
 			);
-			path = Main;
+			path = MainView;
 			sourceTree = "<group>";
 		};
 		8852C0632B3C4AA200219714 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
-				8852C0642B3C4AB300219714 /* MainVC.swift */,
-				88ABDAB12B3EA3BD0011682E /* PieChart.swift */,
 				210B7B412B400E4000D4105D /* MainTableView.swift */,
+				88ABDAB12B3EA3BD0011682E /* PieChart.swift */,
+				8852C0642B3C4AB300219714 /* MainVC.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -652,6 +663,8 @@
 			packageProductDependencies = (
 				21D9F43D2CAFB44800234F04 /* SnapKit */,
 				216C9DFD2CAFBE44009AEB32 /* Then */,
+				21A1DADB2CC75EE90050C6A3 /* Realm */,
+				21A1DADD2CC75EE90050C6A3 /* RealmSwift */,
 			);
 			productName = Sabotage;
 			productReference = 214CC47D2B3C4782003B74EB /* Sabotage.app */;
@@ -764,6 +777,7 @@
 			packageReferences = (
 				21D9F43C2CAFB44800234F04 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				216C9DFC2CAFBE44009AEB32 /* XCRemoteSwiftPackageReference "Then" */,
+				21A1DADA2CC75EE90050C6A3 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 214CC47E2B3C4782003B74EB /* Products */;
 			projectDirPath = "";
@@ -858,7 +872,6 @@
 			files = (
 				2D1BD4CD2B42A20C00EE8374 /* ProfileModel.swift in Sources */,
 				2D6DF9332B45260A00CD0248 /* BeforeAnalysisVC.swift in Sources */,
-				21E4587F2B42007800AFC7F4 /* Buttons.swift in Sources */,
 				88A521042B41654F00CB1DCE /* RankingTableView.swift in Sources */,
 				2DB75DCB2B458CFE005A0E0A /* ChangeBarVC.swift in Sources */,
 				2169E8372B3DD3A600A8DC07 /* ScreenTimeVMSU.swift in Sources */,
@@ -875,6 +888,7 @@
 				21750E062B4159BA004E9A04 /* LimitViewSU.swift in Sources */,
 				8852C0612B3C4A7900219714 /* AnalysisVC.swift in Sources */,
 				2169E8282B3D78C100A8DC07 /* PermissionViewSU.swift in Sources */,
+				21A1DAD92CC75EA40050C6A3 /* Realm.swift in Sources */,
 				88637AB72B3C70ED006F1FF6 /* SaveActionItemController.swift in Sources */,
 				2169E82D2B3D795200A8DC07 /* ScheduleVMSU.swift in Sources */,
 				2169E8302B3D79F400A8DC07 /* Bundle_Extension.swift in Sources */,
@@ -885,7 +899,6 @@
 				21741A0B2B416A250062B0D7 /* DeviceActivityMonitorExtension.swift in Sources */,
 				2D1BD4D12B42A28F00EE8374 /* ProfileTableViewCell.swift in Sources */,
 				215C7D802B45254800D217DA /* GoalGroupApi.swift in Sources */,
-				210B7B452B40176900D4105D /* APICaller.swift in Sources */,
 				88ABDAB22B3EA3BD0011682E /* PieChart.swift in Sources */,
 				8852C05D2B3C491600219714 /* ProfileVC.swift in Sources */,
 				883D8E192B42AA03003DD8C5 /* FontSystemUikit.swift in Sources */,
@@ -901,6 +914,7 @@
 				21E4587C2B41F22D00AFC7F4 /* DeviceID.swift in Sources */,
 				2D6DF9352B45318900CD0248 /* WeekBarVC.swift in Sources */,
 				210B7B422B400E4000D4105D /* MainTableView.swift in Sources */,
+				21A1DAE02CC75F200050C6A3 /* Data.swift in Sources */,
 				2169E8242B3D787500A8DC07 /* DeviceActivtyManager.swift in Sources */,
 				2169E8352B3DA3FD00A8DC07 /* SelectLimitAppVMSU.swift in Sources */,
 				210B7B302B3FF4C000D4105D /* (null) in Sources */,
@@ -951,7 +965,6 @@
 				212FB03A2B487A05001611A8 /* BannerAPI.swift in Sources */,
 				21741A162B4170020062B0D7 /* Bundle_Extension.swift in Sources */,
 				212FB0402B489041001611A8 /* ScreenTimeReport.swift in Sources */,
-				212FB03B2B487A22001611A8 /* APICaller.swift in Sources */,
 				212FB0422B4890C1001611A8 /* TotalActivityReport.swift in Sources */,
 				2169E8322B3D7A6900A8DC07 /* ScreenTimeActivityReport.swift in Sources */,
 				885E033E2B484F10004DB806 /* FontSystem.swift in Sources */,
@@ -1457,6 +1470,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		21A1DADA2CC75EE90050C6A3 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.33.0;
+			};
+		};
 		21D9F43C2CAFB44800234F04 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1472,6 +1493,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 216C9DFC2CAFBE44009AEB32 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		21A1DADB2CC75EE90050C6A3 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21A1DADA2CC75EE90050C6A3 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		21A1DADD2CC75EE90050C6A3 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21A1DADA2CC75EE90050C6A3 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 		21D9F43D2CAFB44800234F04 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

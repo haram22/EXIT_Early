@@ -330,15 +330,15 @@ class MainVC: UIViewController, LimitItemDelegate{
         // MARK: - getBannerActionData
         //        getBannerActionData()
         // MARK: - getActionData
-        getActionData()
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: .addNotification, object: nil)
+//        getActionData()
+//        NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: .addNotification, object: nil)
         
         // MARK: - getLimitData
-        getLimitData()
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: .addLimitNotification, object: nil)
+//        getLimitData()
+//        NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: .addLimitNotification, object: nil)
         
         // MARK: - EjectionPostRequest
-        EjectionPostRequest()
+//        EjectionPostRequest()
         
         // MARK: tableView 관련 코드
         actionTableView = UITableView(frame: .zero, style: .plain)
@@ -425,12 +425,6 @@ class MainVC: UIViewController, LimitItemDelegate{
         limitButton.isHidden = true
         NSLayoutConstraint.activate([
             
-            //             limitButton.topAnchor.constraint(equalTo: limitTableView.bottomAnchor, constant: 250),
-            //             limitButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            //             limitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            //             limitButton.widthAnchor.constraint(equalToConstant: 370), // 버튼의 너비 조정
-            //             limitButton.heightAnchor.constraint(equalToConstant: 80) // 버튼의 높이 조정 // Adjust the width and height based on your image size
-            
             limitButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             limitButton.topAnchor.constraint(equalTo: limitTableView.bottomAnchor, constant: 150),
             limitButton.widthAnchor.constraint(equalToConstant: 350), // Adjust the width and height based on your image size
@@ -492,85 +486,6 @@ class MainVC: UIViewController, LimitItemDelegate{
         tableView.register(cellClass, forCellReuseIdentifier: identifier)
     }
     
-    func getActionData() {
-        if let url = URL(string: "\(urlLink)actionItem/\(userId)/all") {
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { data, response, error in
-                if let error = error {
-                    print("🚨 Error: \(error.localizedDescription)")
-                    return
-                }
-                // JSON data를 가져온다. optional 풀어줘야 함
-                if let JSONdata = data {
-                    let dataString = String(data: JSONdata, encoding: .utf8) //얘도 확인을 위한 코드임
-                    print(dataString!)
-                    // JSONDecoder 사용하기
-                    let decoder = JSONDecoder() // initialize
-                    do {
-                        let decodeData = try decoder.decode(ActionItemData.self, from: JSONdata)
-                        
-                        DispatchQueue.main.async {
-                            self.actionItems = decodeData.data.map {
-                                ActionDummyDataType(id: $0.id, category: $0.category, content: $0.content)
-                            }
-                            self.actionTableView.reloadData()
-                            print("🤢 decodeData", decodeData)
-                            let ids = decodeData.data.map { $0.id }
-                            print("🎃 ids: ", ids)
-                            let categories = decodeData.data.map { $0.category }
-                            print("🎃 categories: ", categories)
-                            let contents = decodeData.data.map { $0.content }
-                            print("🎃 contents: ", contents)
-                            print(ActionItemData.self)
-                        }
-                        
-                    } catch {
-                        print("🚨 JSON decoding error: \(error)")
-                    }
-                }
-            }
-            task.resume()
-        }
-    }
-    func getLimitData() {  // MARK: - "completion: @escaping ActionDataCompletion" 파라미터 추가
-        if let url = URL(string: "\(urlLink)goalGroup/\(userId)") {
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { data, response, error in
-                if let error = error {
-                    print("🚨 Error: \(error.localizedDescription)")
-                    return
-                }
-                // JSON data를 가져온다. optional 풀어줘야 함
-                if let JSONdata = data {
-                    let dataString = String(data: JSONdata, encoding: .utf8) //얘도 확인을 위한 코드임
-                    print("dddd", dataString!)
-                    // JSONDecoder 사용하기
-                    let decoder = JSONDecoder() // initialize
-                    do {
-                        let decodeData = try decoder.decode(LimitItemData.self, from: JSONdata)
-                        
-                        DispatchQueue.main.async {
-                            self.limitItems = decodeData.data.map {
-                                LimitDummyDataType(id: $0.id, title: $0.title, timeBudget: $0.timeBudget)
-                            }
-                            self.limitTableView.reloadData()
-                            print("🤢 decodeData", decodeData)
-                            let title = decodeData.data.map { $0.title }
-                            print("🎃", title)
-                            let timeBudgets = decodeData.data.map { $0.timeBudget }
-                            print("🎃", timeBudgets)
-                            print(LimitItemData.self)
-                        }
-                        
-                    } catch {
-                        print("🚨 JSON decoding error: \(error)")
-                    }
-                }
-            }
-            task.resume()
-        }
-    }
-    
     @objc func actionButtonTapped() {
         if actionTableView.visibleCells.count >= 5 {
             // If there are already 5 cells visible in the actionTableView, show an alert
@@ -582,13 +497,7 @@ class MainVC: UIViewController, LimitItemDelegate{
             // Handle the navigation or any other action if the limit is not reached
             let actionItemController =  ActionItemController() // Replace this line with your desired action
             navigationController?.pushViewController(actionItemController, animated: true)
-            //
-            // MARK: 성진 - TotalActivityView
-            //ㅙ
-            //        let totalActivityView = TotalActivityView(/*activityReport:*/ /* pass your ActivityReport here */)
-            //        let hostingController = UIHostingController(rootView: totalActivityView)
-            //        navigationController?.pushViewController(hostingController, animated: true)
-            ////        }
+       
             
             // MARK: ram - test code
             //        let monitoringView = MonitoringView()
@@ -609,8 +518,8 @@ class MainVC: UIViewController, LimitItemDelegate{
     }
     @objc func reloadCollectionView() {
         DispatchQueue.main.async {
-            self.getActionData()
-            self.getLimitData()
+//            self.getActionData()
+//            self.getLimitData()
             self.actionTableView.reloadData()
             self.limitTableView.reloadData()
         }
@@ -618,7 +527,5 @@ class MainVC: UIViewController, LimitItemDelegate{
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
-    
 }
 
