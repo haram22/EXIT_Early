@@ -39,7 +39,6 @@ class AddActionItemController: UIViewController, UITextFieldDelegate {
     
     let completeButton = UIImageView(image: UIImage(named: "addaction_completebuttonUntapped.png"))
     
-    
     // MARK: UI
     func setUI() {
         Title.contentMode = .center
@@ -161,7 +160,6 @@ class AddActionItemController: UIViewController, UITextFieldDelegate {
                 make.height.equalTo(70)
             }
         }
-        
     }
     
     override func viewDidLoad() {
@@ -229,16 +227,14 @@ class AddActionItemController: UIViewController, UITextFieldDelegate {
             print("Text is missing")
             return
         }
-        //        actionPostRequest(with: "\(selectedCard)", content: text)
-        
         let mainVC = MainVC()
-        print("=> \(text)")
         // Realm에 새로운 항목 추가
         let newItem = CategoryItem()
-        newItem.categoryType = "categoryType"
+        var type : String = ""
+        type = getCategoryType(for: selectedCard)
+        newItem.categoryType = "\(type)"
         newItem.content = text
-        newItem.categoryImageName = "category4"
-        
+        newItem.categoryImageName = "category\(selectedCard).png"
         do {
             try self.realm.write {
                 self.realm.add(newItem)
@@ -252,6 +248,25 @@ class AddActionItemController: UIViewController, UITextFieldDelegate {
     }
     func loadData() {
         actionItems = realm.objects(CategoryItem.self)
+    }
+    
+    func getCategoryType(for selectedCard: Int) -> String {
+        switch selectedCard {
+        case 1:
+            return "운동"
+        case 2:
+            return "셀프케어"
+        case 3:
+            return "생활"
+        case 4:
+            return "생산성"
+        case 5:
+            return "성장"
+        case 6:
+            return "수면"
+        default:
+            return "Unknown Category" // 선택된 카드가 정의된 범위에 없을 경우
+        }
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

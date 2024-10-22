@@ -36,7 +36,6 @@ class MainVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        actionTableView.reloadData()
         view.backgroundColor = .base50
         
         // Realm 초기화
