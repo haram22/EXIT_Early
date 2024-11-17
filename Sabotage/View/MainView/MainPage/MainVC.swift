@@ -86,7 +86,7 @@ class MainVC: UIViewController {
         view.addSubview(actionTableView)
         
         actionTableView.snp.makeConstraints {
-            $0.top.equalTo(leftButton.snp.bottom).offset(10)
+            $0.top.equalTo(leftButton.snp.bottom).offset(15)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
