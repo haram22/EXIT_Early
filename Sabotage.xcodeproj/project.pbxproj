@@ -302,13 +302,13 @@
 			path = LimitTable;
 			sourceTree = "<group>";
 		};
-		210B7B2C2B3FF30400D4105D /* ActionTable */ = {
+		210B7B2C2B3FF30400D4105D /* CanDelete */ = {
 			isa = PBXGroup;
 			children = (
+				88637AB62B3C70ED006F1FF6 /* SaveActionItemController.swift */,
 				210B7B412B400E4000D4105D /* MainTableView.swift */,
-				210B7B372B400D5100D4105D /* ActionTableViewCell.swift */,
 			);
-			path = ActionTable;
+			path = CanDelete;
 			sourceTree = "<group>";
 		};
 		210B7B432B40175D00D4105D /* ServerAPI */ = {
@@ -320,6 +320,15 @@
 				2184A6F42B46832600008073 /* BannerAPI.swift */,
 			);
 			path = ServerAPI;
+			sourceTree = "<group>";
+		};
+		210E4EF82CE9F17C00EDB178 /* AddAction */ = {
+			isa = PBXGroup;
+			children = (
+				8852C0682B3C4B1300219714 /* ActionItemController.swift */,
+				8852C06A2B3C4B2800219714 /* AddActionItemController.swift */,
+			);
+			path = AddAction;
 			sourceTree = "<group>";
 		};
 		214CC4742B3C4782003B74EB = {
@@ -597,10 +606,9 @@
 		8852C0662B3C4ABF00219714 /* ActionView */ = {
 			isa = PBXGroup;
 			children = (
-				210B7B2C2B3FF30400D4105D /* ActionTable */,
-				8852C0682B3C4B1300219714 /* ActionItemController.swift */,
-				8852C06A2B3C4B2800219714 /* AddActionItemController.swift */,
-				88637AB62B3C70ED006F1FF6 /* SaveActionItemController.swift */,
+				210B7B372B400D5100D4105D /* ActionTableViewCell.swift */,
+				210E4EF82CE9F17C00EDB178 /* AddAction */,
+				210B7B2C2B3FF30400D4105D /* CanDelete */,
 				210B7B392B400D6F00D4105D /* ActionModel.swift */,
 				213B347D2CC7A9B900D38F52 /* ActionDetailView.swift */,
 			);

@@ -1,5 +1,6 @@
 import UIKit
-//
+
+// MARK: - action item 추가하기 버튼 클릭 시 이동하는 페이지 (step1)
 class ActionItemController: UIViewController {
     
     // MARK: 변수
@@ -174,6 +175,7 @@ class ActionItemController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        print("anctionItem controller")
         setUI()
         setConstraint()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeButtonTapped))

@@ -8,6 +8,7 @@ import UIKit
 import SnapKit
 import RealmSwift
 
+// MARK: - action item 추가하기 버튼 클릭 시 이동하는 페이지 (step2)
 class AddActionItemController: UIViewController, UITextFieldDelegate {
     var selectedCard: Int = 0
     var realm: Realm!
@@ -164,6 +165,7 @@ class AddActionItemController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("add actionitem controller")
         view.backgroundColor = .white
         
         do {

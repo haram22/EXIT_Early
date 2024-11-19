@@ -389,12 +389,12 @@ extension ScheduleView {
     
 }
 
-struct ScheduleView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScheduleView()
-            .environmentObject(ScheduleVM())
-    }
-}
+//struct ScheduleView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ScheduleView()
+//            .environmentObject(ScheduleVM())
+//    }
+//}
 
 
 struct MainVCWrapper: UIViewControllerRepresentable {

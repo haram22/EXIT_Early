@@ -1,6 +1,7 @@
 import UIKit
 import RealmSwift
 
+// MARK: - 목표 습관 탭의 tableview cell
 class ActionTableViewCell: UITableViewCell {
     var categoryType: UILabel!
     var contentLabel: UILabel!

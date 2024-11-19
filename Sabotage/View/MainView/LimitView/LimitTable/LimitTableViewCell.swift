@@ -3,9 +3,6 @@ import UIKit
 class LimitTableViewCell: UITableViewCell {
     let titleLabel = UILabel()
     let timeBudget = UILabel()
-
-    
-    
     let cellBackgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -16,7 +13,7 @@ class LimitTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        print("limit view called")
         setupLayout()
     }
 

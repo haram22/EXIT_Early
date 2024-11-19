@@ -54,8 +54,8 @@ struct MonitoringView: View {
     }
 }
 
-struct MonitoringView_Previews: PreviewProvider {
-    static var previews: some View {
-        MonitoringView()
-    }
-}
+//struct MonitoringView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MonitoringView()
+//    }
+//}

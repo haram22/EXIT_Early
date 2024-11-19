@@ -30,6 +30,8 @@ class MainVC: UIViewController {
     var limitButtonVisible = false // limitbuttonTapped 이미지의 보이기 여부를 추적하는 변수
     let leftButton = UIButton(type: .system)
     let rightButton = UIButton(type: .system)
+    var limitItems: [String] = ["Limit Item 1", "Limit Item 2", "Limit Item 3"]
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
@@ -69,7 +71,7 @@ class MainVC: UIViewController {
         actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         actionButton.isHidden = false
-    
+        
         // 데이터 로드
         loadData()
     }
@@ -93,14 +95,14 @@ class MainVC: UIViewController {
         
         // limitTableView 설정
         limitTableView = UITableView(frame: .zero, style: .plain)
-        limitTableView.register(UITableViewCell.self, forCellReuseIdentifier: "LimitCustomCell")
+        limitTableView.register(LimitTableViewCell.self, forCellReuseIdentifier: "LimitCustomCell")
         limitTableView.backgroundColor = .base50
         limitTableView.dataSource = self
         limitTableView.delegate = self
         view.addSubview(limitTableView)
         
         limitTableView.snp.makeConstraints {
-            $0.top.equalTo(leftButton.snp.bottom).offset(10)
+            $0.top.equalTo(rightButton.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
@@ -197,7 +199,7 @@ class MainVC: UIViewController {
                 $0.height.equalTo(300)
             }
         }
-
+        
         today.then {
             $0.snp.makeConstraints {
                 $0.top.equalTo(pieChartBG.snp.top).offset(34)
@@ -206,7 +208,7 @@ class MainVC: UIViewController {
                 $0.height.equalTo(22)
             }
         }
-
+        
         forMoreAnalysis.then {
             $0.snp.makeConstraints {
                 $0.top.equalTo(view.safeAreaLayoutGuide).offset(290)
@@ -215,7 +217,7 @@ class MainVC: UIViewController {
                 $0.height.equalTo(30)
             }
         }
-
+        
     }
     
     func toggleUI() {
@@ -253,6 +255,7 @@ class MainVC: UIViewController {
         
         // limitTogglebuttonTapped 제약 조건
         limitTogglebuttonTapped.then {
+            print("toggle tapped")
             $0.snp.makeConstraints {
                 $0.top.equalTo(pieChartBG.snp.bottom).offset(-10)
                 $0.centerX.equalToSuperview()
@@ -357,16 +360,16 @@ class MainVC: UIViewController {
 
 extension MainVC: UITableViewDataSource, UITableViewDelegate {
     
-    
     // 섹션 내 행의 개수 반환
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == actionTableView {
-            return actionItems.count + 1 // 마지막 셀에 "추가" 버튼을 위한 셀 하나 추가
+            return actionItems.count + 1 // "추가" 버튼을 위한 셀 포함
         } else if tableView == limitTableView {
-            return 0 // limitTableView용 별도 데이터 배열이 있다면 반환
+            return limitItems.count // limitItems 배열 크기 반환
         }
         return 0
     }
+
     
     // 각 행에 대한 셀 구성
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -390,7 +393,7 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
                 
                 addButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
                 addButton.layer.cornerRadius = 16 // 반경 설정
-                        addButton.clipsToBounds = true
+                addButton.clipsToBounds = true
                 addButton.contentHorizontalAlignment = .center
                 addButton.backgroundColor = .white
                 addButton.frame = cell.contentView.bounds
@@ -411,9 +414,21 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
                 cell.configure(with: categoryItem)
                 return cell
             }
-        } else if tableView == limitTableView {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LimitCustomCell", for: indexPath)
-            cell.textLabel?.text = "Limit Itefm \(indexPath.row + 1)"
+        };
+        //        if tableView == limitTableView {
+        //            print("limit table view tapped")
+        //            guard let cell = tableView.dequeueReusableCell(withIdentifier: "LimitCustomCell", for: indexPath) as? LimitTableViewCell else {
+        //                return UITableViewCell()
+        //            }
+        //            cell.textLabel?.text = "Limit Item \(indexPath.row + 1)"
+        //            return cell
+        //        }
+        
+        if tableView == limitTableView {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "LimitCustomCell", for: indexPath) as? LimitTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.textLabel?.text = limitItems[indexPath.row]
             return cell
         }
         return UITableViewCell()
