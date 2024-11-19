@@ -3,13 +3,6 @@ import UIKit
 class LimitTableViewCell: UITableViewCell {
     let titleLabel = UILabel()
     let timeBudget = UILabel()
-    let cellBackgroundView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 20
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -23,8 +16,7 @@ class LimitTableViewCell: UITableViewCell {
 
     private func setupLayout() {
         
-        contentView.backgroundColor = .base50
-        contentView.addSubview(cellBackgroundView)
+        contentView.backgroundColor = .yellow
         
         // titleLabel 설정
         titleLabel.font = UIFont.systemFont(ofSize: 16)
@@ -34,10 +26,6 @@ class LimitTableViewCell: UITableViewCell {
 
         // Auto Layout 제약 조건 설정
         NSLayoutConstraint.activate([
-            cellBackgroundView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-            cellBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            cellBackgroundView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            cellBackgroundView.heightAnchor.constraint(equalToConstant: 150),
             
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 40),

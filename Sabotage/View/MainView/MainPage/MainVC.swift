@@ -415,20 +415,13 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
                 return cell
             }
         };
-        //        if tableView == limitTableView {
-        //            print("limit table view tapped")
-        //            guard let cell = tableView.dequeueReusableCell(withIdentifier: "LimitCustomCell", for: indexPath) as? LimitTableViewCell else {
-        //                return UITableViewCell()
-        //            }
-        //            cell.textLabel?.text = "Limit Item \(indexPath.row + 1)"
-        //            return cell
-        //        }
         
         if tableView == limitTableView {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "LimitCustomCell", for: indexPath) as? LimitTableViewCell else {
                 return UITableViewCell()
             }
             cell.textLabel?.text = limitItems[indexPath.row]
+            cell.backgroundColor = .green
             return cell
         }
         return UITableViewCell()
@@ -494,7 +487,6 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
     
     // "내용 추가하기" 버튼 동작
     @objc func addNewItem() {
-        
         let addItemVC = ActionItemController()
         addItemVC.hidesBottomBarWhenPushed = false
         navigationController?.pushViewController(addItemVC, animated: true)
