@@ -25,7 +25,8 @@ class LimitItemController: UIViewController, UIGestureRecognizerDelegate {
     let scrollView = UIScrollView()
     
     override func viewDidLoad() {
-        view.backgroundColor = .white
+        view.backgroundColor = .base50
+        title = "제한 습관"
         setUp()
         setupTapGesture()
         setupTextFields()
@@ -57,26 +58,18 @@ class LimitItemController: UIViewController, UIGestureRecognizerDelegate {
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil) // title 부분 수정
         backBarButtonItem.tintColor = .black
         self.navigationItem.backBarButtonItem = backBarButtonItem
-        
-        titleLabel.then {
-            $0.text = "시간 제한 그룹 생성"
-            $0.textAlignment = .center
-            $0.font = UIFont.boldSystemFont(ofSize: 20)
-            view.addSubview($0)
-        }.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.leading.trailing.equalToSuperview()
-        }
-        
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: inputName.frame.height))
         inputName.then {
-            $0.placeholder = "그룹 이름"
-            $0.textColor = .black
-            $0.font = UIFont.systemFont(ofSize: 18)
+            $0.placeholder = "그룹 1"
+            $0.textColor = .base400
+            $0.font = UIFont.systemFont(ofSize: 16)
             $0.layer.cornerRadius = 15
-            $0.backgroundColor = .systemGray3
+            $0.backgroundColor = .base100
+            $0.leftView = paddingView
+            $0.leftViewMode = .always
             contentView.addSubview($0)
         }.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(50)
+            make.top.equalToSuperview().offset(15)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
             make.height.equalTo(60)
@@ -93,11 +86,12 @@ class LimitItemController: UIViewController, UIGestureRecognizerDelegate {
             make.leading.equalTo(inputName.snp.leading)
             make.trailing.equalTo(inputName.snp.trailing)
         }
+        
         // MARK: - SwiftUi 코드
         hostingController.view.then {
             contentView.addSubview($0)
         }.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(130)
+            make.top.equalTo(inputName.snp.bottom).offset(36)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().inset(30)
             make.bottom.equalToSuperview()
@@ -105,12 +99,12 @@ class LimitItemController: UIViewController, UIGestureRecognizerDelegate {
         
         dailyBudgetButton.then {
             $0.setTitle("하루 총 사용 시간", for: .normal)
-            $0.setTitleColor(.systemGray, for: .normal)
-            $0.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+            $0.setTitleColor(.base400, for: .normal)
+            $0.titleLabel?.font = UIFont.systemFont(ofSize: 16)
             $0.contentHorizontalAlignment = .left
             $0.layer.cornerRadius = 15
-            $0.backgroundColor = .systemGray3
-            $0.titleEdgeInsets = UIEdgeInsets(top: -70, left: 10, bottom: 0, right: 50)
+            $0.backgroundColor = .white
+            $0.titleEdgeInsets = UIEdgeInsets(top: -70, left: 16, bottom: 0, right: 50)
 //            $0.addTarget(self, action: #selector(dailyBudgetButtonTapped), for: .touchUpInside)
             contentView.addSubview($0)
         }.snp.makeConstraints {
@@ -145,8 +139,8 @@ class LimitItemController: UIViewController, UIGestureRecognizerDelegate {
         
         infoLabel.then {
             $0.text = "하루에 앱을 얼마나 사용할지 총 목표 시간을 설정해주세요"
-            $0.textColor = .systemGray
-            $0.font = UIFont.systemFont(ofSize: 14)
+            $0.textColor = .base300
+            $0.font = UIFont.systemFont(ofSize: 12)
             $0.textAlignment = .left
             $0.numberOfLines = 0
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -159,12 +153,12 @@ class LimitItemController: UIViewController, UIGestureRecognizerDelegate {
         
         nudgeButton.then {
             $0.setTitle("앱 알람 간격 설정", for: .normal)
-            $0.setTitleColor(.systemGray, for: .normal)
-            $0.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+            $0.setTitleColor(.base400, for: .normal)
+            $0.titleLabel?.font = UIFont.systemFont(ofSize: 16)
             $0.contentHorizontalAlignment = .left
             $0.layer.cornerRadius = 15
-            $0.backgroundColor = .systemGray3
-            $0.titleEdgeInsets = UIEdgeInsets(top: -70, left: 10, bottom: 0, right: 50)
+            $0.backgroundColor = .white
+            $0.titleEdgeInsets = UIEdgeInsets(top: -70, left: 16, bottom: 0, right: 50)
 //            $0.addTarget(self, action: #selector(nudgeButtonTapped), for: .touchUpInside)
             contentView.addSubview($0)
         }.snp.makeConstraints {
@@ -198,9 +192,9 @@ class LimitItemController: UIViewController, UIGestureRecognizerDelegate {
         }
         
         nudgeInfoLabel.then {
-            $0.text = "무한 스크롤링에서 벗어나 앱을 탈출할 신호를 보내줄게요! 알람 간격을 설정해주세요!"
-            $0.textColor = .systemGray
-            $0.font = UIFont.systemFont(ofSize: 14)
+            $0.text = "무한 스크롤링에서 벗어나 앱을 탈출할 신호를 보내드려요\n알림을 받을 간격을 설정해주세요"
+            $0.textColor = .base300
+            $0.font = UIFont.systemFont(ofSize: 12)
             $0.textAlignment = .left
             $0.numberOfLines = 0
             contentView.addSubview($0)
@@ -411,7 +405,6 @@ extension LimitItemController: UITextFieldDelegate {
 extension LimitItemController {
     
     func setupTapGesture() {
-        
         print("setupTapGesture")
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissPicker))
         tapGesture.delegate = self

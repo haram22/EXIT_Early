@@ -29,7 +29,7 @@ struct DetailView: View {
             SelectAppContainerView()
             Spacer()
         }
-        .background(Color.white, ignoresSafeAreaEdges: .all)
+        .background(.base50, ignoresSafeAreaEdges: .all)
         .onAppear() {
             selection = ScreenTimeVM.shared.selectionToDiscourage
         }
@@ -44,17 +44,18 @@ extension DetailView {
         VStack(spacing: 0) {
             HStack(alignment: .center, spacing: 0) {
                 Text("제한 중인 앱 목록")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+                    .font(.caption1())
+                    .foregroundColor(.base300)
                 Spacer()
-                Button("편집") { isPresented = true }
+                Button("Edit") { isPresented = true }
                     .familyActivityPicker(
                         isPresented: $isPresented,
                         selection: $selection)
                     .font(.subheadline)
+                    .foregroundColor(.primary700)
                     .padding(.horizontal, 10.0)
                     .padding(.vertical, 4.0)
-                    .background(.white)
+                    .background(.base50)
                     .border(.white, width: 0)
                     .cornerRadius(16)
             }
@@ -95,12 +96,16 @@ extension DetailView {
                 .background(Color.blue)
                 .cornerRadius(16)
             } else {
-                Text("선택된 앱이 없습니다.")
-                    .foregroundColor(.clear)
-                    .padding(0.6)
-                    .frame(maxWidth: .infinity, minHeight: 80)
-                    .background(Color.indigo)
-                    .cornerRadius(16)
+                HStack{
+                    Text("Edit 버튼을 눌러 제한할 앱을 추가해주세요")
+                        .font(.system(size: 12))
+                        .foregroundColor(.base400)
+                        .frame(maxWidth: .infinity, minHeight: 80)
+                        .background(Color.white)
+                        .cornerRadius(16)
+                    Spacer()
+                }
+                
             }
         }
         .padding(.top, 0.50)
