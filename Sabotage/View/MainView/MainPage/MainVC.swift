@@ -31,7 +31,7 @@ class MainVC: UIViewController {
     let leftButton = UIButton(type: .system)
     let rightButton = UIButton(type: .system)
     var limitItems: [String] = ["Limit Item 1", "Limit Item 2", "Limit Item 3"]
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
@@ -365,11 +365,11 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
         if tableView == actionTableView {
             return actionItems.count + 1 // "추가" 버튼을 위한 셀 포함
         } else if tableView == limitTableView {
-            return limitItems.count // limitItems 배열 크기 반환
+            return limitItems.count + 1 // limitItems 배열 크기 반환
         }
         return 0
     }
-
+    
     
     // 각 행에 대한 셀 구성
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -412,18 +412,53 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
                 }
                 let categoryItem = actionItems[indexPath.row]
                 cell.configure(with: categoryItem)
+                
                 return cell
             }
         };
         
         if tableView == limitTableView {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "LimitCustomCell", for: indexPath) as? LimitTableViewCell else {
-                return UITableViewCell()
+            if indexPath.row == limitItems.count {
+                // 마지막 셀에 "추가" 버튼 표시
+                let cell = UITableViewCell(style: .default, reuseIdentifier: "AddActionCell")
+                let addButton = UIButton(type: .system)
+                cell.backgroundColor = .base50
+                cell.contentView.backgroundColor = .base50
+                addButton.setTitle("그룹 생성하기", for: .normal)
+                addButton.setTitleColor(.primary700
+                                        , for: .normal)
+                addButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+                addButton.addTarget(self, action: #selector(addNewAcion), for: .touchUpInside)
+                if let plusImage = UIImage(named: "plus_icon") {
+                    addButton.setImage(plusImage, for: .normal)
+                    addButton.tintColor = .primary700
+                }
+                
+                addButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
+                addButton.layer.cornerRadius = 16 // 반경 설정
+                addButton.clipsToBounds = true
+                addButton.contentHorizontalAlignment = .center
+                addButton.backgroundColor = .white
+                addButton.frame = cell.contentView.bounds
+                addButton.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                cell.contentView.addSubview(addButton)
+                addButton.snp.makeConstraints { make in
+                    make.center.equalToSuperview()
+                    make.width.equalToSuperview()
+                    make.height.equalTo(75)
+                }
+                return cell
+            } else {
+                // 일반 셀
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "LimitCustomCell", for: indexPath) as? ActionTableViewCell else {
+                    return UITableViewCell()
+                }
+                let categoryItem = actionItems[indexPath.row]
+                cell.configure(with: categoryItem)
+                
+                return cell
             }
-            cell.textLabel?.text = limitItems[indexPath.row]
-            cell.backgroundColor = .green
-            return cell
-        }
+        };
         return UITableViewCell()
     }
     
@@ -438,7 +473,29 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
             
             print("Selected Limit Item: \(indexPath.row + 1)")
         }
-        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true);
+        
+//        if tableView == limitTableView {
+//            if indexPath.row < actionItems.count {
+//                
+//                print("Selected Action Item: \(actionItems[indexPath.row].content)")
+//            }
+//        } else if tableView == limitTableView {
+//            
+//            print("Selected Limit Item: \(indexPath.row + 1)")
+//        }
+        if tableView == limitTableView {
+                if indexPath.row == limitItems.count {
+                    // 마지막 셀: 새로운 항목 추가
+                    let newItem = "Limit Item \(limitItems.count + 1)"
+                    limitItems.append(newItem)
+                    tableView.reloadData() // 테이블뷰 갱신
+                } else {
+                    // 일반 셀 선택 동작
+                    print("Selected: \(limitItems[indexPath.row])")
+                }
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
     }
     
     // 편집 스타일 설정 (삭제 가능하도록)
@@ -491,4 +548,11 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
         addItemVC.hidesBottomBarWhenPushed = false
         navigationController?.pushViewController(addItemVC, animated: true)
     }
+    
+    @objc func addNewAcion() {
+        let addNewActionVC = LimitItemController()
+        addNewActionVC.hidesBottomBarWhenPushed = false
+        navigationController?.pushViewController(addNewActionVC, animated: true)
+    }
+    
 }
