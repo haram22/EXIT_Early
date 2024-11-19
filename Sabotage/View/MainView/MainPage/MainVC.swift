@@ -30,7 +30,7 @@ class MainVC: UIViewController {
     var limitButtonVisible = false // limitbuttonTapped 이미지의 보이기 여부를 추적하는 변수
     let leftButton = UIButton(type: .system)
     let rightButton = UIButton(type: .system)
-    var limitItems: [String] = ["Limit Item 1", "Limit Item 2", "Limit Item 3"]
+    var limitItems: [String] = ["Limit Item 1"]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -88,8 +88,8 @@ class MainVC: UIViewController {
         view.addSubview(actionTableView)
         
         actionTableView.snp.makeConstraints {
-            $0.top.equalTo(leftButton.snp.bottom).offset(15)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.top.equalTo(leftButton.snp.bottom).offset(16)
+            $0.leading.trailing.equalToSuperview().inset(24)
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         
@@ -99,11 +99,13 @@ class MainVC: UIViewController {
         limitTableView.backgroundColor = .base50
         limitTableView.dataSource = self
         limitTableView.delegate = self
+        limitTableView.separatorStyle = .none
         view.addSubview(limitTableView)
         
+        // limitTableView 위치
         limitTableView.snp.makeConstraints {
-            $0.top.equalTo(rightButton.snp.bottom).offset(10)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.top.equalTo(rightButton.snp.bottom).offset(16)
+            $0.leading.trailing.equalToSuperview().inset(24)
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         
@@ -475,15 +477,6 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
         }
         tableView.deselectRow(at: indexPath, animated: true);
         
-//        if tableView == limitTableView {
-//            if indexPath.row < actionItems.count {
-//                
-//                print("Selected Action Item: \(actionItems[indexPath.row].content)")
-//            }
-//        } else if tableView == limitTableView {
-//            
-//            print("Selected Limit Item: \(indexPath.row + 1)")
-//        }
         if tableView == limitTableView {
                 if indexPath.row == limitItems.count {
                     // 마지막 셀: 새로운 항목 추가
@@ -515,7 +508,10 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 87
+        if tableView == actionTableView  {
+            return 87
+        }
+        return 100
     }
     
     // 목표 추가 셀의 편집 스타일 비허용

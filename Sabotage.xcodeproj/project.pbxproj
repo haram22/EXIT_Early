@@ -24,7 +24,6 @@
 		212FB0402B489041001611A8 /* ScreenTimeReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8112B3D75C400A8DC07 /* ScreenTimeReport.swift */; };
 		212FB0422B4890C1001611A8 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169E8132B3D75C400A8DC07 /* TotalActivityReport.swift */; };
 		213B347A2CC769A800D38F52 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213B34792CC769A800D38F52 /* MainTabBarView.swift */; };
-		213B347C2CC77CC500D38F52 /* MainCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213B347B2CC77CC500D38F52 /* MainCopy.swift */; };
 		213B347E2CC7A9B900D38F52 /* ActionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213B347D2CC7A9B900D38F52 /* ActionDetailView.swift */; };
 		214CC4812B3C4782003B74EB /* SabotageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214CC4802B3C4782003B74EB /* SabotageApp.swift */; };
 		214CC4832B3C4782003B74EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214CC4822B3C4782003B74EB /* ContentView.swift */; };
@@ -169,7 +168,6 @@
 		210B7B412B400E4000D4105D /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
 		210B7B462B4018CF00D4105D /* ActionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionApi.swift; sourceTree = "<group>"; };
 		213B34792CC769A800D38F52 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
-		213B347B2CC77CC500D38F52 /* MainCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCopy.swift; sourceTree = "<group>"; };
 		213B347D2CC7A9B900D38F52 /* ActionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDetailView.swift; sourceTree = "<group>"; };
 		214CC47D2B3C4782003B74EB /* Sabotage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sabotage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		214CC4802B3C4782003B74EB /* SabotageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SabotageApp.swift; sourceTree = "<group>"; };
@@ -598,7 +596,6 @@
 				88ABDAB12B3EA3BD0011682E /* PieChart.swift */,
 				8852C0642B3C4AB300219714 /* MainVC.swift */,
 				213B34792CC769A800D38F52 /* MainTabBarView.swift */,
-				213B347B2CC77CC500D38F52 /* MainCopy.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -903,7 +900,6 @@
 				210B7B382B400D5100D4105D /* ActionTableViewCell.swift in Sources */,
 				21741A122B416FCE0062B0D7 /* TotalActivityView.swift in Sources */,
 				21750E062B4159BA004E9A04 /* LimitViewSU.swift in Sources */,
-				213B347C2CC77CC500D38F52 /* MainCopy.swift in Sources */,
 				8852C0612B3C4A7900219714 /* AnalysisVC.swift in Sources */,
 				2169E8282B3D78C100A8DC07 /* PermissionViewSU.swift in Sources */,
 				21A1DAD92CC75EA40050C6A3 /* ActionTableView_RAM.swift in Sources */,

@@ -6,6 +6,7 @@ class LimitTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = .base50
         print("limit view called")
         setupLayout()
     }
@@ -16,11 +17,13 @@ class LimitTableViewCell: UITableViewCell {
 
     private func setupLayout() {
         
-        contentView.backgroundColor = .yellow
+        contentView.backgroundColor = .white
+        contentView.layer.cornerRadius = 16
         
         // titleLabel 설정
-        titleLabel.font = UIFont.systemFont(ofSize: 16)
-        titleLabel.textColor = .black
+        titleLabel.font = .Callout()
+        titleLabel.textColor = .base700
+        titleLabel.text = "그룹 이름"
         contentView.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
 

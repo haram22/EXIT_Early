@@ -206,17 +206,17 @@ class LimitItemController: UIViewController, UIGestureRecognizerDelegate {
         
         let completeButton = UIButton(type: .system)
         completeButton.then {
-            $0.setTitle("완료", for: .normal)
+            $0.setTitle("저장하기", for: .normal)
             $0.setTitleColor(.black, for: .normal)
-            $0.backgroundColor = .systemBlue
+            $0.backgroundColor = .primary300
             $0.layer.cornerRadius = 15
 //            $0.addTarget(self, action: #selector(completeButtonTapped), for: .touchUpInside)
             contentView.addSubview($0)
         }.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().inset(20)
+            make.leading.equalToSuperview().offset(30)
+            make.trailing.equalToSuperview().inset(30)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(30)
-            make.height.equalTo(70)
+            make.height.equalTo(56)
         }
 
         
