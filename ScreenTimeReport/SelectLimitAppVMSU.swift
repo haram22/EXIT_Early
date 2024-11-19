@@ -91,9 +91,9 @@ extension DetailView {
                         }
                     }
                 }
-                .padding(0.6)
+                .padding(.leading, 10)
                 .frame(maxWidth: .infinity, minHeight: 80)
-                .background(Color.blue)
+                .background(Color.white)
                 .cornerRadius(16)
             } else {
                 HStack{
